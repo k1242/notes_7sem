@@ -2,4 +2,4 @@
 Заметки седьмого семестра МФТИ (ФОПФ). В частности, содержит материалы по:
 
 * **математической статистике**
-([*заметки*](https://github.com/k1242/notes_6sem/blob/main/eqs_phys/hw/eqs_phys_hw.pdf));
+([*заметки*](https://github.com/k1242/notes_7sem/blob/main/math_stat/notes/math_stat.pdf));
