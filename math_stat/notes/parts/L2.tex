@@ -1,0 +1,77 @@
+
+\subsection{Функции риска}
+
+
+Хочется научиться сравнивать разные оценки, рассмотрим разность
+\begin{equation*}
+	\hat{\theta}_n - \theta,
+\end{equation*}
+и введем \textit{функцию потерь} $U$ такую, что $U(0) = 0$, $U(x) = U(-x)$ и монотонную. Например $U(x) = x^2$, $U(x) = |x|$ -- квадратичная и абсолютная функция потерь. Тогда \textit{функция риска}
+\begin{equation*}
+	R_{\hat{\theta}_n} (\theta) = \E U(\hat{\theta}_n - \theta).
+\end{equation*}
+
+
+Например, для несмещенной $\hat{\theta}_n$ и $U(x) = x^2$: $R_{\hat{\theta}_n} (\theta) = \D \hat{\theta}_n$. Глобально хотим минимизировать функцию риска. 
+
+Есть \textit{интегральный} (\textit{байесовский}) подход:
+\begin{equation*}
+	\int_{\Theta} R_{\hat{\theta}_n} (\theta) \d \theta \to \min_{\hat{\theta}_n},
+\end{equation*}
+а для другой априорной информации корректно рассмотреть другую меру $\d \mu$.
+
+И есть минимаксный подход:
+\begin{equation*}
+	\max_{\theta \in \Theta} R_{\hat{\theta}_n} (\theta) \to \min_{\theta_n}.
+\end{equation*}
+% https://youtu.be/3jc-e1t7t5A?list=PLthfp5exSWErTVWq4cVtRXDw5MqBqavJ1&t=2371
+
+
+
+\subsection{Эмпирическая функция распределения}
+
+Хотим по элементам выборки определить функцию распределения $\hat{F}_n(x_1 \seq x_n)$ -- \textit{эмпирическую функцию распределения}, которую можем определить в виде
+\begin{equation*}
+	\hat{F}_n(x; \xi_1 \seq \xi_n)  \overset{\mathrm{def}}{=} \frac{1}{n} \sum_{i=1}^{n} \I_{\{\xi_i \leq x\}},
+\end{equation*}
+где \textit{индикаторная функция}
+\begin{equation*}
+	\I_{\{\text{cond}\}} \overset{\mathrm{def}}{=} \left\{\begin{aligned}
+	    &1, &\text{if cond}; \\
+	    &0, &\text{else}. \\
+	\end{aligned}\right.
+\end{equation*}
+Можем упорядочить элементы выборки $x_{(1)} \leq \ldots \leq x_{(n)}$ -- вариационный ряд, его элементы $x_{(k)}$ -- $k$-е порядковые статистики. 
+% статистика -- оценка
+
+\begin{to_lem}
+    Для $\forall x \in \mathbb{R}$ верно, что $\hat{F}_n(x; \xi_1 \seq \xi_n)$ -- несмещенная и состоятельная оценка $F_{\xi_i} (x)$.
+\end{to_lem}
+
+Верно более сильное утверждение -- \textit{теорема  Гливенко--Кантелли}:
+\begin{equation*}
+	\P\left(
+		\sup_{x \in \mathbb{R}} | \hat{F}_n(x; \xi_1 \seq \xi_n) - F_{\xi_i} (x)| \ton 0 
+	\right) = 1.
+\end{equation*}
+Умножив на $\sqrt{n}$, перейдём к \textit{теореме Колмогорова}: пусть $F_{\xi_i}$ непрерывна и  
+\begin{equation*}
+	\sqrt{n}  D_n \overset{\mathrm{def}}{=}  \sqrt{n} \sup_{x \in \mathbb{R}} | \hat{F}_n(x; \xi_1 \seq \xi_n) - F_{\xi_i} (x)|,
+\end{equation*}
+тогда
+\begin{equation*}
+	\sqrt{n} D_n \overset{\textnormal{d}}{\ton} \eta \colon
+	\hspace{2.5 mm} 
+	 F_\eta (y) = \left\{\begin{aligned}
+	    &0, &y \leq 0; \\
+	    &K(y), & y > 0,
+	\end{aligned}\right.
+	\hspace{5 mm} 
+	K(y) = \sum_{i=-\infty}^{\infty} (-1)^i e^{-2 i^2 y^2}, y > 0,
+\end{equation*}
+где\footnote{
+	<<$\overset{\textnormal{d}}{\ton}$>> -- сходимость по распределению.
+}  $K(y)$ -- функция распределения Колмогорова.
+% https://youtu.be/3jc-e1t7t5A?list=PLthfp5exSWErTVWq4cVtRXDw5MqBqavJ1&t=4865
+% ЗБЧ и ЦПТ
+

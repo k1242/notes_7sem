@@ -1,0 +1,50 @@
+\subsection{Гипотезы о согласии}
+
+
+
+
+
+Посмотрели на выборку, предполагаем $H_0$, что $F_{\xi_i} = F$. \textit{Ошибка I рода} -- отвергаем $H_0$, хотя она верна. \textit{Ошибка II рода} -- принять $H_0$, хотя верна $H \neq H_0$. 
+
+\textbf{$\Omega$-критейрий}. Выберем $\Omega \subset \mathbb{R}^n$ -- \textit{критическое множество}, и считаем, что если $(x_1 \seq x_n) \in \Omega$, то $H_0$ неверна, если $(x_1 \seq x_n) \notin \Omega $, то $H_0$ верна.  
+
+Если $\Omega$ выбрана, то
+\begin{equation*}
+	P_0 \left[(\xi_1 \seq \xi_n) \in \Omega\right] = \int_{\Omega} p_{\xi_1 \seq \xi_n} (x_1 \seq x_n) \d x_1 \ldots \d x_n.
+\end{equation*}
+
+
+
+\textbf{Критерий Колмогорова}. Предполагая $F$ непрерывной, можем выбрать
+\begin{equation*}
+	\Omega = \{(x_1\seq x_n) \mid \sqrt{n} D_n(x_1 \seq x_n) > c\},
+	\hspace{5 mm} 
+	D_n = \sup_{x \in \mathbb{R}} |\hat{F}_n(\xi_1 \seq \xi_n) - F(x_1 \seq x_n|,
+\end{equation*}
+где $\hat{F}_n$ -- эмпирическая функция распределения. 
+Осталось вспомнить, что по теореме Колмогорова
+\begin{equation*}
+	P_0\left[(\xi_1 \seq \xi_n) \in \Omega\right] \approx P(\eta > c) = 1 - K(c).
+\end{equation*}
+Осталось выбрать $c_{1-\alpha}$ так, чтобы $K(c_{1-\alpha})=1-\alpha$, и получить $P_0 = \alpha$. Удобно определить
+\begin{equation*}
+	\Omega_\alpha = \{(x_1 \seq x_n) \mid \sqrt{n} D_n(x_1 \seq x_n) > c_{1-\alpha}\},
+\end{equation*}
+где $\alpha$ -- уровень значимости. 
+
+
+\textbf{Критерий $\chi^2$}. Считаем в рамках $H_0$, что $F_{\xi_i} = F$; $\xi_i \in \Delta$. Представим $\Delta = \Delta_1 \sqcup \ldots \sqcup \Delta_N$.
+Какие-то из элементов выборки $x_1\seq x_n$ ($\nu_1$ штук) попали в $\Delta_1$, какие-то ($\nu_2$ штук) в $\Delta_2$ и т.д.
+Введем $p_i$ -- вероятности того, что $\xi_i \in \Delta$, если $H_0$ верна. Тогда, по \textit{теореме Пирсона}
+\begin{equation*}
+	\sum_{i=1}^{N} \frac{(\nu_i - n p_i)^2}{n p_i} \overset{d}{\ton} \eta \sim \chi^2_{N-1}.
+\end{equation*}
+Тогда аналогично строим
+\begin{equation*}
+	\Omega_\alpha = \left\{
+		(x_1\seq x_n) \mid \sum_{i=1}^{N}  \frac{(\nu_i - n p_i)^2}{n p_i} > \chi^2_{N_1, 1-\alpha}
+	\right\},
+\end{equation*}
+для уровня значимости $\alpha$. 
+
+

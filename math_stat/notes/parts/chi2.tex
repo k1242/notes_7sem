@@ -1,0 +1,10 @@
+\subsection{Распределение \texorpdfstring{$\chi^2$}{хи-квадрат}}
+ 
+Пусть $z_1 \seq z_k$ -- совместно независимые: $z_i \sim \mathcal N(0, 1)$, тогда
+\begin{equation*}
+	x = z_1^2 + \ldots + z_k^2,
+\end{equation*}
+имеет распределение $\chi^2$ с $k$ степенями свободы, то есть $x \sim f_{\chi^2(k)}(x)$ с плотностью распределения
+\begin{equation*}
+	f_{\chi^2(k)}(x) = \frac{(1/2)^{k/2}}{\Gamma\left(\frac{k}{2}\right)} x^{\frac{1}{2}k-1}e^{- \frac{1}{2}x}.
+\end{equation*}

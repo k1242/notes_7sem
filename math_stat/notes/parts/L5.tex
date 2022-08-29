@@ -1,0 +1,37 @@
+\subsection{Неравенство Рао-Крамера}
+
+
+Введем множество $A = \{x \mid f(x;\, \vc{\theta}) \neq 0\}$. \textit{Первое условие регулярности} -- $A \neq A(\vc{\theta})$. 
+\textit{Вторым условием регулярности} является дифференцируемость $f(x;\, \theta)$ по $\vc{\theta}$ на $A$. 
+Наконец, введем $u = \partial_\theta \ln f(\xi;\, \vc{\theta})$, и условием регулярности будет выступать
+\begin{equation*}
+	\E u = 0 \ \ \forall \theta \in \Theta,
+	\hspace{10 mm} 
+	0 < \D u < \infty.
+\end{equation*}
+
+К слову про дипсерсию
+\begin{equation*}
+	\D u = \E \left(\frac{\partial \ln f}{\partial \theta} \right)^2 \overset{\mathrm{def}}{=} I_1 (\theta),
+\end{equation*}
+где $I_1 (\theta)$ -- информация Фишера, или $I_n (\theta) = n I_1(\theta)$:
+\begin{equation*}
+	I_n (\theta) \overset{\mathrm{def}}{=}  \E \left(\partial_\theta \ln L(\xi_1\seq \xi_n; \theta)\right)^2.
+\end{equation*}
+
+\begin{to_thr}[неравенство Рао-Крамера]
+    Пусть выполнены условия регулярности, $\hat{\theta}_n$ -- несмещенная оценка $\theta$ и $\E \hat{\theta}_n$ можно дифференцировать по $\theta$ под знаком интеграла. Тогда\footnote{
+    	Где $I_n (\theta) \sim n \cdot \const$.
+    }  $\D \hat{\theta}_n \geq \frac{1}{I_n (\theta)}$. 
+\end{to_thr}
+
+\begin{to_thr}[]
+    Пусть выполнены условия регулярности, $f(x; \vc{\theta})$ трижды дифференцируема по $\theta$, $\E \partial_\theta^3 f(\xi; \theta)\leq h(\xi)$ с $\E h < \infty$. Тогда решение уравнения $\partial_\theta \ln L = 0$ является ОМП.  Эта оценка асимптотически нормальна с наименьшей дисперсией $\frac{1}{I_1(\theta)}$ -- асимптотически эффективна. 
+\end{to_thr}
+
+
+
+% \section{Доверительные интервалы}
+
+
+% \red{дописать}

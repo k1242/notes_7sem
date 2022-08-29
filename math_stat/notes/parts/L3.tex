@@ -1,0 +1,30 @@
+\subsection{Асимптотическая нормальность}
+
+Оценка $\hat{\theta}_n$ называется \textit{асимптотически нормальной}, если 
+\begin{equation*}
+	\sqrt{n} (\hat{\theta}_n - \theta) \overset{d}{\ton} \eta \sim \mathcal N (0, \sigma^2[\theta]),
+\end{equation*}
+где $\sigma^2$ -- асимптотическая дисперсия. 
+
+% Например для гауссовой плотности $p(x)$ 
+% $= \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left(- \frac{x^2}{2 \sigma^2}\right)$
+% функция распределения $F(x) = \int_{-\infty}^{x} p(t) \d t$ будет функцией ошибки. 
+
+\begin{to_def}
+    \textit{Медианной точкой} распределения называют $x_{1/2} \colon  F(x_{1/2}) = 1/2$, аналогично вводят $\alpha$-квантиль с $x_{\alpha}$. 
+\end{to_def}
+
+Рассмотрим $F_{\xi_i} (x) = F(x-\theta)$, тогда для $p(0) \neq 0$ и $p(-x) = p(x)$ верно, что $\theta = \E \xi_i = x_{1/2}$.  В качестве одной из оценок можем рассматривать $\hat{\theta}_n^{[1]} = \bar{x}$, которая будет асимптотически нормальной:
+\begin{equation*}
+	\sigma_{\bar{x}}^2 = \D \xi_1.
+\end{equation*}
+Для $x_{1/2}$ хорошей оценкой выступит $\hat{\theta}_n^{[2]} = x_{(n/2)}$ -- выборочная медиана, для которой верна теорема:
+\begin{equation*}
+	\sqrt{n}\left(\hat{\theta}_n^{[2]} - x_{1/2}\right) \overset{d}{\ton} \eta \sim \mathcal N\left(0,\, \tfrac{1}{4 p^2[0]}\right).
+\end{equation*}
+
+
+Как выбирать из двух асимптотически нормальных оценок? Просто брать ту, что с меньшим значением $\sigma^2$, она будет более эффективной.
+
+% https://youtu.be/fi3MS8hgBao?list=PLthfp5exSWErTVWq4cVtRXDw5MqBqavJ1&t=2675
+

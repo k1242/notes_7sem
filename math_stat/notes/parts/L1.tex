@@ -1,0 +1,59 @@
+Рассмотрим выборку $x_1 \seq x_n$. Предположим, что есть набор
+\begin{equation*}
+	\xi_1 \seq \xi_n \colon  \Omega \mapsto \mathbb{R},
+	\hspace{5 mm} 
+	\xi_1(\omega) = x_1 \seq \xi_n(\omega) = x_n.
+\end{equation*}
+Верим, что $\xi_i$ \textit{независимы в совокупности} и одинаково распределены. 
+
+% разберемся с тремя классами задач
+
+Предполагаем, что $F_{\xi_i} \in \{F_{\vc{\theta}}\}_{\vc{\theta} \in \Theta \subset \mathbb{R}^m}$, где $\Theta$ -- параметрическое множество.
+
+\begin{to_def}
+    Оценка (\textit{точечная}) -- любая функция $\hat{\theta}_n$ элементов выборки $\colon  \Im \hat{\theta}_n \in \Theta$. 
+\end{to_def}
+
+Вообще оценка это $\hat{\theta}_n (\xi_1 \seq \xi_n)$ -- случайная величина. Естественно определить \textit{несмещенную} оценку 
+\begin{equation*}
+	\E \hat{\theta}_n = \theta
+\end{equation*}
+и \textit{состоятельную} оценку
+\begin{equation*}
+	\hat{\theta}_n \toP \theta,
+\end{equation*}
+где имеется ввиду \textit{сходимость по вероятности}:
+\begin{equation*}
+	\forall \varepsilon > 0 \ P(|\hat{\theta}_n -\theta| > \varepsilon) \ton 0.
+\end{equation*}
+
+Рассмотрим, например, нормальное распределение $\xi_i \sim \mathcal N(\theta_1, \theta_2^2)$. Положим
+$\hat{\theta}_n = \bar{x} = \frac{1}{n} \sum_{i=1}^{n} \xi_i$, тогда
+\begin{equation*}
+	\E \hat{\theta}_n = \frac{1}{n} \sum_{i=1}^{n} \E \xi_i = \theta_1,
+\end{equation*}
+то есть оценка несмещенная. Более того, оценка состоятельна
+\begin{equation*}
+	\hat{\theta}_n = \frac{1}{n}\left(\xi_1 + \ldots + \xi_n\right) \toP \E \xi_i = \theta_1,
+\end{equation*}
+из закона больших чисел\footnote{
+	Может быть усилено до сходимость почти наверное. Тогда оценка будет называться сильно состоятельной.
+}.
+
+Теперь для дисперсии в $\xi_i \sim \mathcal N(a, \theta_2^2)$ разумно взять
+\begin{equation*}
+	\hat{\theta}_n = \frac{1}{n} \sum_{i=1}^{n} (\xi_i - a)^2,
+\end{equation*}
+которая является состоятельной и несмещенной.
+
+Но, для неизвестного среднего $\xi_i \sim \mathcal N(\theta_1, \theta_2^2)$ уже по-другому
+% https://youtu.be/aJokwg6c2KQ?list=PLthfp5exSWErTVWq4cVtRXDw5MqBqavJ1&t=3120
+\begin{equation*}
+	\hat{\theta}_n = \frac{1}{n} \sum_{i=1}^{n} \left(
+		\xi_i - \frac{1}{n} \sum_{j=1}^{n} \xi_j
+	\right)^2,
+	\hspace{5 mm} 
+	\E \hat{\theta}_n = \frac{n-1}{n} \theta_2^2,
+\end{equation*}
+получили смещенную оценку (асимптотически несмещенную), а для несмещенной оценки необходимо брать множитель $\frac{1}{n-1}$.
+

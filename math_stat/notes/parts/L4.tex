@@ -1,0 +1,51 @@
+
+\subsection{Построение статистических оценок: метод моментов}
+
+Понятно, что можем построить состоятельные несмещенные оценки, вида
+\begin{equation*}
+	\E \xi_i^k \ \colon  \ \overline{x^k} = \frac{1}{n} \sum_{i=1}^{n} \xi_i^k.
+\end{equation*}
+Зная, что величины распределены по $F_{\xi_i} \in \{F_{\vc{\theta}}\}_{\vc{\theta} \in \Theta \subset \mathbb{R}^m}$, можем посчитать
+\begin{equation*}
+	\E \xi_i^k = f_k(\theta_1 \seq \theta_m).
+\end{equation*}
+Составим систему уравнений 
+\begin{equation*}
+	f_1 (\theta_1 \seq \theta_m) = \bar{x}, \hspace{5 mm} \ldots, \hspace{5 mm} f_m (\theta_1 \seq \theta_m) = \overline{x^m},
+\end{equation*}
+которую будем считать разрешимой и с $\exists !$ решением -- $\hat{\theta}_n^1 \seq \hat{\theta}_n^m$, искомой оценкой параметров распределения. 
+
+
+
+
+\subsection{Построеник статистических оценок: метод максимального правдоподобия}
+
+Рассмотрим $f(x;\, \vc{\theta}) = P_\theta(\xi=x)$ для дискретного случая и $f(x;\, \vc{\theta}) = p_\xi (x;\, \vc{\theta})$ для абсолютно непрерывного случая. 
+Определим \textit{функцию правдоподобия} 
+\begin{equation*}
+	L(x_1\seq x_n; \vc{\theta}) = \prod_{i=1}^n f(x_i;\, \vc{\theta}),
+\end{equation*}
+то есть чем вероятнее для $\vc{\theta}$ наблюдение таких параметров, тем больше функция правдоподобия. Оценка метода правдоподобия (ОМП) -- это точка $\hat{\theta}_n$ максимума функции $L$. 
+
+Удобно работать с $\ln L$, тогда будем решать систему
+\begin{equation*}
+	\frac{\partial \ln L}{\partial \theta_1} = 0, \hspace{5 mm} \ldots, \hspace{5 mm} \frac{\partial \ln L}{\partial \theta_m} = 0,
+\end{equation*}
+и находить ОМП.
+
+
+Например, для Binom$(k, \theta)$ 
+\begin{equation*}
+	P(\xi_i = x_i) = C_k^{x_i} \theta^{x_i} (1-\theta)^{k-x_i},
+	\hspace{5 mm} 
+	L(x_1 \seq x_n; \theta) = \prod_{i=1}^{n} C_k^{x_i} \theta^{x_i} (1-\theta)^{k-x_i},
+\end{equation*}
+тогда можем найти
+\begin{equation*}
+	\frac{\partial \ln L}{\partial \theta} = \sum_{i=1}^{n} \left(
+		\frac{x_i}{\theta} - \frac{k-x_i}{1-\theta}
+	\right) = 0,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	\hat{\theta}_n = \frac{1}{kn} \sum_{i=1}^{n} x_i.
+\end{equation*}
+
