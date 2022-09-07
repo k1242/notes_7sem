@@ -1,0 +1,54 @@
+\subsection*{Теоретическая оценка}
+
+
+% \textbf{Концентрация в печке}. 
+Концентрацию атомов в печке можем найти, зная зависимость давления насыщенных паров $P$ от температуры $T$:
+\begin{equation}
+    P(T) = 133.32\,\text{Па} \times 10^{
+                10.3354 - \frac{8345.57}{T} - 8.84 \times 10^{-5} T - 0.68106 \log_{10} T
+            },
+    \label{PT}
+\end{equation}
+соответственно знаем концентрацию внутри печки, как $\sub{n}{ov} = P/\sub{k}{B} T$.
+
+% \textbf{Геометрия печки}. 
+Внутренний диаметр печки $\sub{d}{noz} = 7\,$мм, площадь $\sub{S}{noz} = 40\,$мм$^2$, длина сопла $\sub{L}{noz}=210\,$мм.
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=1.\textwidth]{figures/oven.png}
+%     \caption{Параметры печки}
+%     %\label{fig:}
+% \end{figure}
+Тогда из всех атомов, влетающих в сопло, выделяется конус, с телесным углом
+\begin{equation*}
+    \sub{\Omega}{noz} = 2 \pi \left(1 - \cos \sub{\theta}{max}\right) \approx 2 \pi \cdot 1.4 \times 10^{-4},
+    \hspace{10 mm} 
+    \sub{\theta}{max} = \frac{\sub{d}{noz}}{2 \sub{L}{noz}}.
+\end{equation*}
+Количество атомов $\sub{J}{in}$, влетающих в сопло, можем найти как
+\begin{equation*}
+    \sub{J}{in} = \sub{S}{noz} \cdot \frac{1}{4} \sub{n}{ov} \bar{v},
+    \hspace{10 mm} 
+    \bar{v} = \sqrt{\frac{8 \sub{k}{B} T}{\pi m}}.
+\end{equation*}
+Количество атомов вылетающих из печки с определенной скоростью $v_r$ и $v_z$ можем найти в виде
+\begin{equation*}
+    \d J_{v_r,\, v_z} = \frac{2 \sub{n}{ov} \sub{S}{noz}}{\pi^{1/2} \alpha^3}
+    \cdot 
+    v_r e^{-v_r^2/\alpha^2} 
+    \cdot
+    v_z e^{-v_z^2/\alpha^2} \d v_z \d v_r,
+\end{equation*}
+где $\alpha = \sqrt{\frac{2 \sub{k}{B} T}{m}}$, -- наиболее вероятная скорость.
+
+Проинтегрировав $d J_{v_r,\, v_z}$ с учётом колимации действительно находим, что
+\begin{equation*}
+    \sub{J}{out} = \int_{0}^{\infty} \int_{0}^{\infty}  J_{v_r,\, v_z} \cdot \theta[\sub{\theta}{max}-v_r/v_z] \d v_r \d v_z \approx \sub{S}{noz} \cdot \frac{1}{4} \sub{n}{ov} \bar{v} \cdot \sub{\theta}{max}^2,
+\end{equation*}
+где $\theta[\ldots]$ -- функция Хэвисайда. Собирая всё вместе получаем зависимость $\sub{J}{out}$ от температуры.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/j_out_theor.pdf}
+    \caption{Теоретическая зависимость потока атомов из печки от температуры}
+    \label{fig:j_out_theor}
+\end{figure}
