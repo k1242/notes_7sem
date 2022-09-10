@@ -1,0 +1,159 @@
+\subsubsection*{Адиабатическое размагничивание (задача)}
+Имеем кристаллическую решетку с примесями. (Магнито-каллорический эффект)
+\begin{equation*}
+	E = E_{\text{поле решетки}} + E_{\text{примесей в малом поле}},
+\end{equation*}
+если $H$ -- понижаем, то $T$ образца уменьшается. Нужно найти $\frac{\partial T}{\partial H} - ?$.
+
+\subsubsection*{Будем решать.}
+
+Функцией чего является энергия? $E(S,V H)$. Пренебрегаем изменением $V$, то есть объём фиксирован.
+\begin{equation*}
+	d E = T d S - M d H
+\end{equation*}
+тогда
+\begin{equation*}
+	\left(\frac{\partial T}{\partial H}\right)_{S} = - \left(\frac{\partial M}{\partial S}\right)_{H} 
+	= - \frac{\partial (M, H)}{\partial (T, H)}
+	= - \frac{\partial(M, H)}{\partial(T,H)} \frac{\partial(T, H)}{\partial(S,H)}
+	= - \left(\frac{\partial M}{\partial T}\right)_H \cdot \frac{T}{T (\partial S/\partial T)_H} 
+	= \left(- \frac{\partial M}{\partial T}\right)_H \frac{T}{C_{V, H}}
+\end{equation*}
+Кроме того теплоёмкость системы, примесная же теплоёмкость это
+\begin{equation*}
+	C = C_\text{решетки} + C_\text{примесей} \approx C_{V, H} \approx \alpha T^3.
+\end{equation*}
+Парамагнетик в слабых полях (закон Кюри): 
+$$M(T) = \chi(T) H, \hspace{1 cm}\chi(T) = A/T.$$ Таким образом
+\begin{equation*}
+	\left(\frac{\partial M}{\partial T}\right)_H = \chi'(T) H;
+	\hspace{1 cm}
+	\left(- \frac{\partial M}{ \partial T}\right)_H = \frac{A}{T^2} H
+\end{equation*}
+Таким образом 
+\begin{equation*}
+	\left(\frac{\partial T}{ \partial H}\right)_S = \frac{A}{T^2} H \frac{T}{\alpha T^3} = \frac{A H}{\alpha T^4}.
+\end{equation*}
+Следовательно, 
+
+Если $H$ увеличиваем, то $ T$ --- увеличивается. Если $H$ уменьшается, то $T$ --- уменьшается.
+
+\subsubsection*{Двухуровневая Система}
+Имеем $N$ атомов, часть из них $n$ на возбужденном уровне. Тогда задана и энергия системы
+\begin{equation*}
+	E_{\text{сист}} = 0 \cdot (N - n) + n \varepsilon = n \varepsilon.
+\end{equation*}
+Наша задача найти $S(E) - ?$ (и всё так далее про термодинамику)
+
+И так, задание $(N, n)$ однозначно определяет $(N, E)$ и наоборот. Энтропия будет функцией $S(E,N)$.
+И по Больцману 
+\begin{equation*}
+	S = \ln W(E),
+\end{equation*}
+где $W(E)$ -- статистический вес -- число микроскопических состояний, отвечающих заданному макросостоянию.
+Число таких микросотояний легко посчитать $W(E) = C_N^n = \frac{N!}{n! (N-n)!}$.
+
+По формуле Стирлинга
+\begin{equation*}
+	N! \approx \left(\frac{N}{e}\right)^{N}, 
+	\hspace{1 cm}
+	\ln N! \approx N \ln N - N.
+\end{equation*}
+Тогда
+\begin{align*}
+	\ln C_N^n &\approx \ln N! - \ln n! = \ln(N-n)! = N\ln N - N - n \ln n + n - (N-n) \ln(N-n) + N - n \\
+	&= N \ln N - n \ln n - (N-n) \ln N - (N-n) \ln\left(1- \frac{n}{N}\right) \\
+	& = - n \ln\frac{n}{N} - N \left(1 - \frac{n}{N}\right) \ln\left(1 - \frac{n}{N}\right) \\
+	& = N \left[- \frac{n}{N} \ln \frac{n}{N} - \left(1 - \frac{n}{N}\right) \ln \left(1 - \frac{n}{N}\right)\right] = S
+\end{align*}
+Энтропия у нас пропорциональная $N$, а в скобках там стоит плотность $n/N = x$ -- доля возбужденных атомов.
+\begin{equation*}
+	E = \varepsilon n 
+	\hspace{1 cm}
+	\frac{n}{N} = \frac{E}{\varepsilon N},
+\end{equation*}
+тут удобно ввести $E/N$ -- удельная энергия, $s = S/N$ -- удельная энтропия. Тогда
+\begin{equation*}
+	S = N s(\frac{E}{N}), 
+	\hspace{1 cm}
+	S = N s(x).
+\end{equation*}
+
+Посмотрим на выводы. Имеем функцию
+\begin{equation*}
+	s(x) = - x \ln(x) - (1-x) \ln(1-x),
+	\hspace{1 cm}
+	0 \leq x \leq 1.
+\end{equation*}
+\red{построим график}
+
+Мы помним, что S(E) -- всегда растущая функция $E$ (в обычных системах), выпуклая вверх (convex).
+А на графике мы видим, что есть ветвь, которая хоть и выпуклая вверх, но убывает.
+Это связано с тем, что мы рассматриваем спиновую систему с конечным числом уровней. Тогда энергия системы имеет ограничение
+\begin{equation*}
+	0 \leq E \leq E_{\text{max}} = N \varepsilon,
+\end{equation*}
+а число возможных квантовых состояний конечно $\equiv 2^{N}$ и в итоге в тиках системах и появляется ветвь с убывающей энтропией.
+
+На лекции мы узнали, что 
+\begin{equation*}
+	\left(\frac{\partial S}{\partial E}\right)_{N} = \frac{1}{T},
+\end{equation*}
+значит на той ветви температура отрицательна. Найдём её
+\begin{equation*}
+	\frac{\partial S}{\partial E} = \frac{\partial S/N}{\partial E /N} = \frac{ \partial s}{\partial \varepsilon x} = \frac{1}{\varepsilon} \frac{\partial s}{\partial x}.
+\end{equation*}
+Функция $s(x)$ задана выше, её производная легко находится
+\begin{equation*}
+	s'(x) = ln \frac{1 - x}{x}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\frac{\partial S}{\partial E} = \frac{1}{\varepsilon} \ln \frac{1 - x}{x} = \frac{1}{T}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	T(x) = \varepsilon \frac{1}{\ln\left(\frac{1 - x}{x}\right)}.
+\end{equation*}
+\red{построим график}
+
+Почему же температура при $x = 1/2$ уходит в бесконечность? Как вообще в система (например) с двумя положениями спинов почувствовать? Давайте посчитаем что происходит в нашей системе с возбуждающимися атомами.
+
+Найдём зависимость от температуры
+\begin{equation*}
+	x(T) =  \frac{1}{1 + e^{\varepsilon/T}}.
+\end{equation*}
+\red{построим график}
+
+Выглядит как ферми ступенька, которая нигде не кончится. Физически же это означает, что как бы мы ни грели систему больше чем половину уровня мы не заполним.
+Или если, посмотреть на область $T<0$, то они как бы "горячее" (заселеннее) чем $T = + \infty$ (они обе соответствуют заселенности $x>1/2$).
+На эксперименте это реализуется с помощью переворота магнитного поля в системе спинов, и тогда верхний уровень будет заселён как раз больше.
+
+Любопытствующий студент может спросить про трёхуровневую систему
+\begin{equation*}
+	\frac{n_3}{n_2} \sim \frac{e^{\varepsilon_3/T}}{e^{\varepsilon_2/T}},
+\end{equation*}
+но тут нужно быть осторожным и всё аккуратно посчитать.
+
+Осталось найти среднюю энергию
+\begin{equation*}
+	\langle E\rangle = \varepsilon \langle n\rangle(T) = \frac{\varepsilon N}{1 + e^{\varepsilon/T}}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\langle E\rangle_{T \to \infty} = \frac{\varepsilon N}{2}.
+\end{equation*}
+А теперь теплоёмкость
+\begin{equation*}
+	C(T) = \frac{d E}{d T} = \frac{\varepsilon^2}{T^2} N \frac{e^{\varepsilon/T}}{\left(1 + e^{\varepsilon/T}\right)^2},
+	\hspace{1 cm}
+	c = \frac{C}{N} = \frac{\varepsilon^2}{T^2}\frac{e^{\varepsilon/T}}{\left(1 + e^{\varepsilon/T}\right)^2}.
+\end{equation*}
+\red{построим график}
+
+\noindent Важно отметить три особенности
+\begin{enumerate}
+	\item $T \to 0$, то и $c \to 0$, теплоёмкость экспоненциально мала;
+	\item $c$ -- имеет максимум, если число уровней ограничено, значит он есть (теплоёмкость Шотки);
+	\item $T \to \infty$, то $c \sim 1/T^2$.
+\end{enumerate}
