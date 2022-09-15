@@ -86,7 +86,7 @@ $$M(T) = \chi(T) H, \hspace{1 cm}\chi(T) = A/T.$$ Таким образом
 \end{equation*}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/sem2im1.pdf}
+    \includegraphics[width=0.45\textwidth]{img/sem2im1.pdf}
     %\caption{}
     %\label{fig:}
 \end{figure}
@@ -120,15 +120,27 @@ $$M(T) = \chi(T) H, \hspace{1 cm}\chi(T) = A/T.$$ Таким образом
 	\hspace{1 cm}
 	T(x) = \varepsilon \frac{1}{\ln\left(\frac{1 - x}{x}\right)}.
 \end{equation*}
-\red{построим график}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem2im2.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+
 
 Почему же температура при $x = 1/2$ уходит в бесконечность? Как вообще в система (например) с двумя положениями спинов почувствовать? Давайте посчитаем что происходит в нашей системе с возбуждающимися атомами.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem2im3.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
 Найдём зависимость от температуры
 \begin{equation*}
 	x(T) =  \frac{1}{1 + e^{\varepsilon/T}}.
 \end{equation*}
-\red{построим график}
+
 
 Выглядит как ферми ступенька, которая нигде не кончится. Физически же это означает, что как бы мы ни грели систему больше чем половину уровня мы не заполним.
 Или если, посмотреть на область $T<0$, то они как бы "горячее" (заселеннее) чем $T = + \infty$ (они обе соответствуют заселенности $x>1/2$).
@@ -154,11 +166,17 @@ $$M(T) = \chi(T) H, \hspace{1 cm}\chi(T) = A/T.$$ Таким образом
 	\hspace{1 cm}
 	c = \frac{C}{N} = \frac{\varepsilon^2}{T^2}\frac{e^{\varepsilon/T}}{\left(1 + e^{\varepsilon/T}\right)^2}.
 \end{equation*}
-\red{построим график}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem2im4.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+
 
 \noindent Важно отметить три особенности
 \begin{enumerate}
 	\item $T \to 0$, то и $c \to 0$, теплоёмкость экспоненциально мала;
-	\item $c$ -- имеет максимум, если число уровней ограничено, значит он есть (теплоёмкость Шотки);
-	\item $T \to \infty$, то $c \sim 1/T^2$.
+	\item $c$ -- имеет максимум, если число уровней ограничено, значит он есть (теплоёмкость Шоттки);
+	\item $T \to \infty$, то $c \sim 1/T^2$ (красная асимптота).
 \end{enumerate}
