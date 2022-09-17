@@ -1,0 +1,49 @@
+\textbf{Т8}. \red{\xmark}
+
+\textbf{Т9}. \red{\xmark}
+
+\textbf{Т10}. Найдём вероятность обнаружить всё четыре масти, взяв 6 карт из колоды. Всего карт каждой масти 13. Пусть событие
+$A_i$ -- не вытащили карты $i$-й масти. Нам нужно найти $p = 1-P(A_1\cup A_2\cup A_3\cup A_4)$:
+\begin{equation*}
+	P(A_1\cup A_2\cup A_3\cup A_4\cup) = 4 P(A_i) - 6 P(A_i \cap A_j) + 4 P(A_i \cap A_j \cap A_k),
+\end{equation*}
+так как масти эквивалентны и $P(A_1\cap A_2\cap A_3\cap A_4\cap) = 0.$ Размер $|\Omega| = C^6_{52}$, тогда
+\begin{equation*}
+	P(A_i) = \frac{C^6_{39}}{C^6_{52}}, 
+	\hspace{5 mm} 
+	P(A_i \cap A_j) = \frac{C^6_{26}}{C^6_{52}},
+	\hspace{5 mm} 
+	P(A_i \cap A_j \cap A_k) = \frac{C^6_{13}}{C^6_{52}},
+\end{equation*}
+откуда находим
+\begin{equation*}
+	p = 1 - \frac{4 C^6_{39} - 6 C^6_{26} + 4 C^6_{13}}{C^6_{52}} \approx 0.43.
+\end{equation*}
+
+
+\textbf{Т11}. Пусть $A_i$ -- $i$-е письмо в нужном конверте, $A = A_1 \cup \ldots \cup A_n$. Тогда по формуле включений-исключений
+\begin{equation*}
+	P(A) = n P(A_1) - C_n^2 P(A_i A_j) + C_n^3 P(A_i A_j A_k) - \ldots,
+\end{equation*}
+где соответствующие вероятности 
+\begin{equation*}
+	P(A_i) = \frac{1}{n},
+	\hspace{5 mm} 
+	P(A_i A_j) = \frac{(n-2)!}{n!} = \frac{1}{n (n-1)},
+	\hspace{5 mm} \ldots
+\end{equation*}
+Подставляя, находим
+\begin{equation*}
+	P(A) = 1 - \frac{1}{2!} + \frac{1}{3!} - \frac{1}{4!} + \ldots = \sum_{k=1}^{n} \frac{(-1)^{k+1}}{k!},
+	\hspace{10 mm} 
+	1-P(A) = \sum_{k=0}^{n} \frac{(-1)^k}{k!} \underset{n \to \infty}{\to} e^{-1}.
+\end{equation*}
+
+
+\textbf{Т12}. Раз половина людей имеет 50-рублевые купюры, а друга половина 100-рублевые, то можем сопоставить первым открывающие скобки, а вторым закрывающие. Таким образом задача сводится к подсчёту количества правильных скобочных последовательностей. Мощность $|\Omega| = C_{2n}^n$, тогда
+\begin{equation*}
+	P = \frac{C_n}{C_{2n^n}} = \frac{1}{n+1},
+\end{equation*}
+где числа Каталана $C_n = C_{2n}^n - C_{2n}^{n-1} = \frac{1}{n+1} C_{2n}^n$.
+
+

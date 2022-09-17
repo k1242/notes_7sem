@@ -1,0 +1,41 @@
+
+
+
+\textbf{Т1}. 
+Найдём все события $X$: $\overline{XA} \cup \overline{X \bar{A}} = B$. Вспоминая $\overline{\cup A} = \cap \bar{A}$ и $\overline{\cap A} = \cup \bar{A}$, получаем
+\begin{equation*}
+	XX + (A+\bar{A})X + A \bar{A} = \bar{B},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}	
+	X = \bar{B}.
+\end{equation*}
+
+
+\textbf{Т2}.
+Теперь $A X = AB$. Учитывая, что $A \bar{A} = \varnothing$, находим $X = B \cup \bar{A}$. 
+
+
+\textbf{Т3}. Покажем, что $P\left(\bigcup_{k=1}^n  A_k\right) + P\left(\bigcap_{k=1}^n \bar{A}_k\right) = 1$, действительно:
+\begin{equation*}
+	P\left(\bigcup  A_k\right) + P\left(\overline{\bigcup A_k}\right) = 1,
+	\hspace{0.5cm} \Leftarrow \hspace{0.5cm}
+	P(X) + P(\bar{X}) = P(X \cup \bar{X}) = P(\Omega) = 1.
+\end{equation*}
+
+
+\textbf{Т4}. \red{\xmark}
+
+\textbf{Т5}. \red{\xmark}
+
+
+\textbf{Т6}. Покажем, что $\forall A, B$ $|P(AB)-P(A)P(B)|\leq \frac{1}{4}$. По отдельности, т.к. $P(A) \geq P(AB)$ и $P(B) \geq P(AB)$ находим
+\begin{equation*}
+	P(AB) - P(A)P(B) \leq P(AB) - P(AB)^2 = P(AB) (1-P(AB)) \leq \tfrac{1}{4}.
+\end{equation*}
+Теперь с другой стороны, вспоминая $P(AB) + P(A \bar{B}) = P(A)$,  находим
+\begin{equation*}
+	P(A) P(B) - P(AB) = P(A) P(B) - (P(A)-P(A \bar{B})) - P(A) P(\bar{B}) + P(A) P(\bar{B}) = P(A \bar{B}) - P(A) P(B) \leq \tfrac{1}{4},
+\end{equation*}
+в силу уже доказанного неравенства.
+
+\textbf{Т7}. \red{\xmark}
+
