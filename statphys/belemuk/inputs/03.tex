@@ -1,0 +1,144 @@
+\subsubsection*{Много осцилляторов}
+Рассмотрим систему $N$ осцилляторов, каждый из них характеризуется своей энергией $\varepsilon = \hbar \omega (n + 1/2)$.
+Таким образом нам задана полная энергия всей системы
+\begin{equation*}
+	E = \sum_{i= 1}^N \varepsilon_i = \sum_i \frac{\hbar \omega}{2} + \sum_i \hbar \omega n_i = E_0 + \hbar \omega M,
+\end{equation*}
+где $E_0 = N \frac{\hbar \omega}{2}$ -- энергия основного состояния системы, $M$ -- сумма всех квантов.
+
+В нашей системе таким образом есть переменные характеризующие макросостояния $(N, E) \sim (N, M)$ -- это состояние мы фиксируем.
+В нашей системе есть микросостояния, через которые будет задаваться статвес макросостояния системы как число способ приставить $M$ в виде суммы $N$ целых неотрицательных чисел:
+\begin{equation*}
+	W(E) =  C_{N+M-1}^{N-1} = \frac{(M+N-1)!}{(N-1)! M!}.
+\end{equation*}
+А энтропия тогда
+\begin{equation*}
+	S = \ln W(E) = \ln \frac{(M+N-1)!}{(N-1)! M!},
+	\hspace{1 cm}
+	N \gg 0.
+\end{equation*}
+Интересно отметить, что $C_{N+M-1}^{N-1}/C_{N+M}^{N}$ не близко у нулю, при больших $N$.
+Используя формулу Стирлинга
+\begin{equation*}
+	S \approx \ln(M+N)! - \ln N! - \ln M! = (M+N) \ln(M+N) - (M+N) - N \ln(N) + N - M\ln M + M.
+\end{equation*}
+Избавляемся от подобных слагаемых
+\begin{equation*}
+	S \approx - M \ln \frac{M}{N} +  (M+N) \ln\left(1 + \frac{M}{N}\right)
+		= N \left[- \frac{M}{N} \ln \frac{M}{N} + \left(1 + \frac{M}{N}\right)\ln\left(1 + \frac{M}{N}\right)\right]
+\end{equation*}
+Или переходя к удельной энтропии $s = S/N$, $m = M/N$
+\begin{equation*}
+	s(m) = (1+m) \ln(1 + m) - m \ln m.
+\end{equation*}
+\begin{itemize}
+	\item при $m \gg 1$ $\leadsto$ $s(m) \approx \ln m$; 
+	\item при $m \to 1$ $\leadsto$ $s(m) \to 0$.
+\end{itemize}
+Смысл $m$ -- что-то вроде удельной энергии системы
+\begin{equation*}
+	\frac{E}{N} = \frac{E_0}{N} + \hbar \omega \frac{M}{N} \frac{\hbar \omega}{2} + \hbar \omega m.
+\end{equation*}
+И все ожидаемые свойства такой полученной удельной энтропии выполняются, например
+\begin{itemize}
+	\item $s(m)$ -- монотоная функция энергии; 
+	\item $s'(m) > 0$.
+\end{itemize}
+Таким образом получили действительно энтропию системы $S = N s(m).$
+
+Теперь будем работать с полученной энтропией. Например получим температуру системы
+\begin{equation*}
+	\frac{1}{T} = \left(\frac{\partial S}{\partial E}\right)_{N} = \frac{\partial(S/N)}{\partial (E/N)} = \frac{\partial s}{\partial \varepsilon} = \frac{\partial s}{\partial m} \frac{\partial m}{\partial\varepsilon}
+	= \frac{\partial s}{\partial m} \frac{1}{\partial\varepsilon/\partial m} = \frac{1}{\hbar \omega} \frac{\partial s}{\partial m} = \frac{1}{\hbar \omega} \ln\left(1 + \frac{1}{m}\right).
+\end{equation*}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/sem3im1.pdf}
+    \hfill
+    \includegraphics[width=0.45\textwidth]{img/sem3im2.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+Таким образом 
+\begin{equation*}
+	T = \frac{\hbar \omega}{\ln\left(1 + \frac{1}{m}\right)},
+	\hspace{2 cm}
+	m = \frac{1}{e ^{\hbar \omega/T} - 1},
+\end{equation*}
+замечаем распределение Бозе-Эйнштейна в обратной зависимости.
+
+
+
+Посчитаем среднюю энергию возбуждения 
+\begin{equation*}
+	\langle E\rangle = E_0 + \hbar \omega \langle M\rangle = E_0 + \hbar \omega N \langle m\rangle = E_0 + N \frac{\hbar \omega}{ e^{\hbar \omega/T} - 1},
+\end{equation*}
+\begin{equation*}
+	\frac{\langle E\rangle}{N} = \langle \varepsilon\rangle = \frac{\hbar \omega}{2} + \frac{\hbar \omega}{ e^{\hbar \omega/T} - 1}.
+\end{equation*}
+Теплоёмкость осциллятора
+\begin{equation*}
+	\frac{C}{N} = \frac{d \langle \varepsilon\rangle}{d T} = \left(\frac{\hbar \omega}{T}\right)^2 \frac{e^{\hbar \omega/T}}{\left(e^{\hbar \omega/T} - 1\right)^2}
+\end{equation*}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem3im3.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+
+
+\subsection*{Канонический ансамбль}
+Есть система с уровнями $E_\alpha$, которая обменивается теплом $\delta Q$ с термостатом\footnote{в зарубежной литературе можно встретить название \textit{thermal bath.}}температурой $T$. Такая система называется каноническим ансамблем с макропараметрами $T, V, N$. Тут $V$ -- объём системы, как $N$ -- число частиц в ней.
+
+Каноническим распределением называется вероятность найти системы в квантовом состоянии $|\alpha\rangle$ (микросостоянии)
+\begin{equation*}
+	w_{\alpha} = \frac{1}{Z} e^{- \frac{E_\alpha}{T}},
+	\hspace{1 cm}
+	\sum_\alpha w_\alpha = 1.
+\end{equation*}
+Где задана статистическая сумма $Z = \sum_\alpha e^{- \frac{E_\alpha}{T}}$.
+Связь статсуммы со свободной энергией $F = - T \ln Z.$
+Если посмотреть лекции или книжки можно найти убедительные доказательства и не менее занятные факты, как например
+\begin{equation*}
+	w_\alpha = e^{\frac{F - E_\alpha}{T}}, 
+	\hspace{1 cm}
+	Z = \sum_E g(E) e^{\frac{E}{T}}.
+\end{equation*}
+
+\subsubsection*{Задача}
+Рассмотрим классический газ магнитных диполей в магнитом поле. Мы отвлечемся от движения атомов, носителей диполей. Нас будет интересовать именно положение самих диполей. Если поле направлено по оси $z$, то
+\begin{equation*}
+	\varepsilon_i = - \vc{\mu}_i \vc{H} = -\mu_i^z H = - \mu \cos \theta_i H,
+\end{equation*}
+заметим, что модули всех диполей одинаковые $\mu_i  = \mu$.
+Энергия системы задается выражением
+\begin{equation*}
+	E_\text{сист} = E = \sum_{i=1}^N \varepsilon_i = - \sum_i \mu_i^z H.
+\end{equation*}
+Энергия системы как функция квантовых состояний системы будет
+\begin{equation*}
+	E = E(\vc{n}_1, \vc{n}_2, \ldots, \vc{n}_N) = \sum_i \varepsilon_i(\vc{n}_i).
+\end{equation*}
+A статистическая сумма
+\begin{equation*}
+	Z = \sum_\alpha e^{- \frac{E_\alpha}{T}} = (Z_1)^N,
+	\hspace{1 cm}
+	Z_1 = \sum_{\text{напр. } \smallvc{n}} e^{-\frac{\varepsilon(\smallvc{n})}{T}}.
+\end{equation*}
+Теперь наша задача -- отыскать эту $Z_1$. Сводим суммы по всем направлениям $\smallvc{n}$ к интегралу по телесному углу.
+\begin{equation*}
+	Z_1 = \sum_{\text{напр. } \smallvc{n}} e^{-\frac{\varepsilon(\smallvc{n})}{T}} = \int d \Omega \ e^{- \frac{\varepsilon(\smallvc{n})}{T}} = \int \sin \theta d \theta d \varphi \ e^{- \frac{\varepsilon(\smallvc{n})}{T}}.
+\end{equation*}
+Заменяем $\frac{\mu H}{T} = \alpha$ Интегрируем! 
+\begin{equation*}
+	Z_1 = \int_0^\pi \sin \theta d \theta \int_0^{2\pi} d\varphi \ e^{- \frac{\mu H \cos \theta}{T}} = 2 \pi \int_0^\pi \sin \theta d \theta \ e^{\alpha \cos \theta} = 2 \pi \int_{-1}^{+1} d x \ e ^{\alpha x} = 2 \pi \frac{1}{\alpha} e^{\alpha x} \mid_{-1}^{+1} = \frac{2\pi}{\alpha} \left(e^{+\alpha} - e^{-\alpha}\right).
+\end{equation*}
+То есть
+\begin{equation*}
+	Z_1 = \frac{4 \pi}{\alpha} \sh \alpha, Z = (Z_1)^N.
+\end{equation*}
+Свободная энергия же получается 
+\begin{equation*}
+	F = - T \ln Z = - T \ln(Z_1)^N = - T N \ln Z_1 = - T N \ln \left(\frac{4 \pi }{\alpha} \sh \alpha\right).
+\end{equation*}
