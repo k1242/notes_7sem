@@ -78,7 +78,7 @@
 \end{equation*}
 Теплоёмкость осциллятора
 \begin{equation*}
-	\frac{C}{N} = \frac{d \langle \varepsilon\rangle}{d T} = \left(\frac{\hbar \omega}{T}\right)^2 \frac{e^{\hbar \omega/T}}{\left(e^{\hbar \omega/T} - 1\right)^2}
+	\frac{C}{N} = \frac{d \langle \varepsilon\rangle}{d T} = \left(\frac{\hbar \omega}{T}\right)^2 \frac{e^{\hbar \omega/T}}{\left(e^{\hbar \omega/T} - 1\right)^2}.
 \end{equation*}
 \begin{figure}[h]
     \centering
@@ -130,13 +130,15 @@ A статистическая сумма
 \begin{equation*}
 	Z_1 = \sum_{\text{напр. } \smallvc{n}} e^{-\frac{\varepsilon(\smallvc{n})}{T}} = \int d \Omega \ e^{- \frac{\varepsilon(\smallvc{n})}{T}} = \int \sin \theta d \theta d \varphi \ e^{- \frac{\varepsilon(\smallvc{n})}{T}}.
 \end{equation*}
-Заменяем $\frac{\mu H}{T} = \alpha$ Интегрируем! 
+Заменяем $\frac{\mu H}{T} = \alpha$. Интегрируем! 
 \begin{equation*}
 	Z_1 = \int_0^\pi \sin \theta d \theta \int_0^{2\pi} d\varphi \ e^{- \frac{\mu H \cos \theta}{T}} = 2 \pi \int_0^\pi \sin \theta d \theta \ e^{\alpha \cos \theta} = 2 \pi \int_{-1}^{+1} d x \ e ^{\alpha x} = 2 \pi \frac{1}{\alpha} e^{\alpha x} \mid_{-1}^{+1} = \frac{2\pi}{\alpha} \left(e^{+\alpha} - e^{-\alpha}\right).
 \end{equation*}
 То есть
 \begin{equation*}
-	Z_1 = \frac{4 \pi}{\alpha} \sh \alpha, Z = (Z_1)^N.
+	Z_1 = \frac{4 \pi}{\alpha} \sh \alpha, 
+	\hspace{1 cm}
+	Z = (Z_1)^N.
 \end{equation*}
 Свободная энергия же получается 
 \begin{equation*}
