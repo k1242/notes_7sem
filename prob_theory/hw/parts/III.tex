@@ -1,0 +1,68 @@
+\textbf{Т24}. \red{\xmark}
+
+
+\textbf{Т25}. \red{\xmark}
+
+
+
+\textbf{Т26}. В квадрат брошена точка в $(\xi_1,\, \xi_2)$. Найдём функцию распределения и плотность $\eta = \xi_1 + \xi_2$. Обозначив плотность распределения за $f_1$ и $f_2$ соответсвенно, можем найти
+\begin{equation*}
+	f_\eta (y) = \int_{0}^{1} f_1(y-x_2) f_2(x_2) \d x_2 = \int_{\max(0, y-1)}^{\min(1,y)} \d x_2 = \left\{\begin{aligned}
+	    &y, &0 \leq y < 1, \\
+	    &2-y, &1 \leq y \leq 2.
+	\end{aligned}\right.
+\end{equation*}
+Интегрируя, находим $F_\eta (y)$:
+\begin{equation*}
+	F_\eta (y) = \left\{\begin{aligned}
+	    &\tfrac{1}{2}y^2, & 0\leq y < 1, \\
+	    &2y- \tfrac{1}{2}y^2 - 1, &1\leq y \leq 2.
+	\end{aligned}\right.
+\end{equation*}
+
+
+\textbf{Т27}. Пусть $\xi_1,\, \xi_2 \in \text{P}_\lambda$ -- независимые случайные величины. Для суммы $\xi_1 + \xi_2 = \eta$, $x_1 + x_2 = y$можем найти 
+\begin{equation*}
+	P(\eta = y) = \sum_{x_1, x_2 \colon x_1 + x_2 = y} P_{\xi_1}(x_1) P_{\xi_2}(x_2) = \sum_{0 \leq x_1 \leq y}  \frac{\lambda^y e^{-2\lambda}}{x_1! (y-x_1)!} = \frac{\lambda^y e^{-2\lambda}}{y!} 2^y.
+\end{equation*}
+Условное распределение $\xi_1$ при известной $\eta = \xi_1 + \xi_2$ найдём в виде
+\begin{equation*}
+	\frac{P(\xi_1 = x,\, \eta=y)}{P(y=\eta)} = \frac{P(\xi_1=x) P(\xi_2=y-x)}{P(y=\eta)} =  \frac{C_y^x}{2^y}.
+\end{equation*}
+
+
+\textbf{Т28}. Известно, что случайная величина $\xi$ имеет строго возрастающую непрерывную функцию распределения $F_\xi (x)$. Найдём распределение случайное величины $\eta = F_\xi(\xi)$:
+\begin{equation*}
+	F_\eta (x) = P(F(\xi) < x) = \left\{\begin{aligned}
+	    &0, &x \leq 0,\\
+	    &P(\xi<F^{-1}(x)), &x \in (0, 1),\\
+	    &1, &x \geq 1.\\
+	\end{aligned}\right.
+\end{equation*}
+По определению $P(\xi < F^{-1} (x)) = F(F^{-1}(x)) = x$, получается $\eta \in U_{0,1}$. 
+
+
+\textbf{Т29}. Пусть $\xi \in N_{0, 1}$, найдём функцию распределения $F_{\xi^2}(x)$ и плотность $f_{\xi^2}(x)$. Нас  интересуют все такие $x^2 = y$ или $x = \sqrt{y}$, тогда
+\begin{equation*}
+	f_\xi (x) \d x \ \overset{x = \sqrt{y}}{\to} \ \frac{f_\xi(\sqrt{y})}{\sqrt{y}} \d y,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	f_{\xi^2}(y) = \frac{1}{\sqrt{2\pi y}} e^{-y/2}.
+\end{equation*}
+Теперь по определению находим функцию распределения
+\begin{equation*}
+	F_{\xi^2}(z) = \int_{0}^{z} \frac{1}{\sqrt{2\pi}} \frac{e^{-y/2}}{\sqrt{y}} \d y = \frac{2}{\sqrt{2\pi}} \int_{0}^{z} e^{-\sqrt{y}^2/2} \d \sqrt{y} = \Erf\left(\sqrt{\tfrac{z}{2}}\right).
+\end{equation*}
+
+
+\textbf{Т30}. \red{\xmark}
+
+
+\textbf{Т31}. Можем решать эту задачу в терминах геометрической вероятности, тогда на кубе $[0,1]^3$ задана система неравенств
+\begin{equation*}
+	|x-y| \geq \frac{1}{4},
+	\hspace{5 mm} 
+	|z-y| \geq \frac{1}{4},
+	\hspace{5 mm} 
+	|x-z| \geq \frac{1}{4},
+\end{equation*}
+которые формируют в кубе 6 одинаковых пирамидок объёма $1/48$, тогда искомая вероятность равна $1/8$.
