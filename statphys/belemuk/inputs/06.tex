@@ -1,0 +1,83 @@
+\subsection*{продолжаем}
+\begin{equation*}
+	Z_{1 \text{ вращ}}^\text{орто} = \sum_{L = 1,2,5 \ldots} =3 e^{- 2 T_c/T} + 7 e^{-12 T_c/T} + \ldots
+\end{equation*}
+Энергия вращаетльного движения тогда
+\begin{equation*}
+	E_{1 \text{ вращ}}^\text{орто} = T^2 \frac{\partial}{\partial T} \ln Z_{1 \text{ вращ}}^\text{орто} = T^2 \frac{\partial}{\partial T} \ln 3 e^{- 2 T_c /T}\left(1 + \frac{7}{3} e^{-10 T_c/T} + \ldots \right)
+	= T^2 \frac{\partial}{\partial T} \left(- \frac{2 T_c}{T} + \frac{7}{3} e^{-10 \frac{T_c}{T}}\right) = 2 T_c + \frac{70}{3} e^{- 10 T_c/T}.
+\end{equation*}
+И тогда
+\begin{equation*}
+	C_{1 \text{ вращ}}^\text{орто} = \frac{700}{3} \frac{T_c^2}{T^2} e^{-10 T_c/T} + \ldots.
+\end{equation*}
+\red{нарисовать график}
+
+Может показаться, что к единице ничего не стремится, но
+\begin{equation*}
+	Z_{1 \text{ вращ}}^\text{орто} = \int_{0}^{+\infty} d L (2 L + 1) e^{-L(L+1)T_c/T} = \frac{T}{T_c}
+	\hspace{0.5 cm}
+	\leadsto
+	\hspace{0.5 cm}
+	E_{1 \text{ вращ}}^\text{орто} = T^2 \frac{\partial}{\partial T} \ln \frac{T}{T_c} = T
+	\hspace{0.5 cm}
+	\leadsto
+	\hspace{0.5 cm}
+	C_{1 \text{ вращ}}^\text{орто} = 1.
+\end{equation*}
+Теперь в качестве упражнения можно рассмотреть смесь в состоянии термодинамического равновесия орто + пара водород $N_\text{орто} + N_\text{пара} = N$. Показать, что
+\begin{equation*}
+	\frac{N_\text{орто}(T)}{N_\text{пара}(T)} = 3 \frac{Z_\text{орто}(T)}{Z_\text{пара}(T)}.
+\end{equation*}
+Перейдём к теории флуктуаций\footnote{Сейчас у меня сядет ноут, потому что в 520ГК не работает розетка. Поэтому возможно когда-то (когда ещё и первый семинар) появится и эта часть конспекта.}
+\subsection*{Термодинамические квазиравновесные флуктуации}
+\subsubsection*{Изолированное тело}
+Рассматриваем изолированное тело, хотим посмотреть вероятность находится в неравновесном состоянии, задаваемом параметром $x$ -- отклонение от равновесного состояния. 
+\begin{equation*}
+	w(x) \sim \frac{\text{число всех микростостояний отвечающих } x}{\text{полное число всех возможных микросостояний}} \sim \text{статвес состояния } x \sim e^{S(x)}.
+\end{equation*}
+\begin{equation*}
+	S(x) = S(x_0) + \Delta S,
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	w(x) \sim e^{\Delta S(x)}
+\end{equation*}
+где $S(x_0)$ -- отвечает равновесию системы.
+
+\subsubsection*{Тело в среде}
+Среда есть термостат. К телу относятся переменные $\{S,V,T,P\}$, а к термостату относятся $\{S_0, V_0, T_0, P_0\}$ -- и он всегда в равновесии.
+Вводим снова параметр $x$ -- харакатеризующий отклонение состояние тела от равновесия
+\begin{equation*}
+	w(x) \sim e^{\Delta S_\text{tot}(x)},
+	\hspace{1 cm}
+	\Delta S_\text{tot} = \Delta S + \Delta S_0.
+\end{equation*}
+Мы считаем, что состояние тремостата остаётся равновесным. ТО есть $T_0$ и $P_0$ остаются постоянными.
+Тогда для него справедлив второй закон термодинамики
+\begin{equation*}
+	\Delta S_0 = \frac{\delta Q_0}{T_0} = - \frac{\delta Q}{T_0}.
+\end{equation*}
+Ну а тепло ему, кроме как от тела получат неоткуда.
+
+А вот тело, хоть и отклоняется от равновесия, но всегда можем записать первый закон
+\begin{equation*}
+	\delta Q = \Delta E + A_\text{против сил внешнего давления} = \Delta E + P_0 \Delta V,
+\end{equation*}
+так как внешнее давление это и есть $P_0$.
+Таким образом получаем для энтропии теромтстата
+\begin{equation*}
+	\Delta S_0 = - \frac{\Delta E + P_0  \Delta V}{T_0}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\Delta S_\text{tot} = \Delta S - \frac{\Delta E + P_0 \Delta V}{T_0} = \frac{T_0 \Delta S - \Delta E - P_0  \Delta V}{T_0}.
+\end{equation*}
+Таким образом 
+\begin{equation*}
+	w(x) \sim \exp\left(\frac{T_0 \Delta S - \Delta E - P_0  \Delta V}{T_0}\right),
+	\hspace{1 cm}
+	x = \{\Delta S, \Delta V, \Delta E\}.
+\end{equation*}
+
+Теперь предположим, что флуктуации малы. Тогда $E(S,V)$ имеет тот же функциональный вид, тот же самый, как и в равновесии.
