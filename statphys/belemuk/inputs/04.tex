@@ -47,9 +47,9 @@
 
 \subsection*{Квантовый случай}
 Теперь будем рассматривать квантовый газ атомов в магнитном поле. Каждый атом имя собственный момент $J$, проекция которого на ось магнитного поля $z$ будет квантоваться по $\nu = - J, \ldots, + J$.
-В магнитном поле они приобретают добавку к энергии $\Delta E_\nu = g_J \mu_B H \nu$.
+В магнитном поле они приобретают добавку к энергии $\Delta E_\nu = g_J \mu_\text{Б} H \nu$.
 \begin{equation*}
-	Z_1 = \sum_{\text{кв. сост.}} e^{\Delta E_\nu /T} = \sum_{\nu = J}^{+J} e^{- \frac{g_J \mu_B H \nu}{T}} = \sum_\nu e^{- \alpha \nu} = e^{\alpha J} [1 + e^{- \alpha} + e^{- 2\alpha} + \ldots + e ^{-2 \alpha J}].
+	Z_1 = \sum_{\text{кв. сост.}} e^{\Delta E_\nu /T} = \sum_{\nu = J}^{+J} e^{- \frac{g_J \mu_\text{Б} H \nu}{T}} = \sum_\nu e^{- \alpha \nu} = e^{\alpha J} [1 + e^{- \alpha} + e^{- 2\alpha} + \ldots + e ^{-2 \alpha J}].
 \end{equation*}
 Получили сумму геометрической прогрессии из $n = 2 J + 1$ элементов.
 \begin{equation*}
@@ -68,7 +68,7 @@
 И намагниченность
 \begin{equation*}
 	M^z = - \frac{\partial F}{\partial H} = T N \frac{1}{Z_1} \frac{\partial Z_1}{\partial H}
-	= T N \frac{1}{Z_1} \frac{\partial Z_1}{\partial \alpha} \frac{\partial \alpha}{\partial H} = T N \frac{g_J \mu_B}{T} \frac{1}{Z_1} \frac{\partial Z_1}{\partial \alpha}.
+	= T N \frac{1}{Z_1} \frac{\partial Z_1}{\partial \alpha} \frac{\partial \alpha}{\partial H} = T N \frac{g_J \mu_\text{Б}}{T} \frac{1}{Z_1} \frac{\partial Z_1}{\partial \alpha}.
 \end{equation*}
 Теперь осталось продифференцировать
 \begin{equation*}
@@ -77,7 +77,7 @@
 	(J+1/2) \cth \alpha(J + 1/2) - \frac{1}{2} \cth \alpha/2
 	\equiv B_J(\alpha),
 \end{equation*}
-где $B_J(\alpha)$ -- функция Бриуллена\footnote{за график спасибо Саше Яворскому.}.
+где $B_J(\alpha)$ -- функция Бриллюэна\footnote{за график спасибо Саше Яворскому.}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{img/brillouin.eps}
@@ -86,11 +86,11 @@
 \end{figure}
 В слабых полях 
 \begin{equation*}
-	M^z = N g_J \mu_B \frac{J(J+1)}{3} \frac{g_J \mu_B H}{T} = N \frac{(g_J \mu_B)^2}{3 T}J (J+1) H.
+	M^z = N g_J \mu_\text{Б} \frac{J(J+1)}{3} \frac{g_J \mu_\text{Б} H}{T} = N \frac{(g_J \mu_\text{Б})^2}{3 T}J (J+1) H.
 \end{equation*}
 \begin{itemize}
-	\item  $g_J m_B H \ll T$ -- слабое поля ($\alpha \ll 0$): $\chi = N \frac{(g_J\mu_B)^2}{3 T}J (J+1) \sim \frac{1}{T}$ -- закон Кюри;
-	\item $g_J m_B H \gg T$ -- сильное поле ($\alpha \gg 0$): $M^{z} = g_J \mu_B N J$.
+	\item  $g_J m_B H \ll T$ -- слабое поля ($\alpha \ll 0$): $\chi = N \frac{(g_J\mu_\text{Б})^2}{3 T}J (J+1) \sim \frac{1}{T}$ -- закон Кюри;
+	\item $g_J m_B H \gg T$ -- сильное поле ($\alpha \gg 0$): $M^{z} = g_J \mu_\text{Б} N J$.
 \end{itemize}
 
 \subsection*{Каноническое распределение для классического газа}
