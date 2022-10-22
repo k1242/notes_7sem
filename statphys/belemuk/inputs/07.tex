@@ -1,0 +1,140 @@
+\subsection*{Флуктуации числа частиц в газе}
+Возьмем $N$ частиц газа в объёме $V$. Зададимся вопросом какова вероятность найти в небольшом объёме газа $v$ ровно $n$ частиц? То есть $P_n(v) - ?$. Введём вероятность $p = v/V$ одной частицы попасть в объём в $v$. Соответственно $q = 1 - v/V$ --- это вероятность того, что частицы не находятся в этом объёме.
+
+Тогда для $n$ частиц получим вероятность просто по биномиальному распределению
+\begin{equation*}
+	P_n(v) = C_N^n p^n q^{N-n}. 
+\end{equation*}
+Проследим как оно плавно перетекает в распределение Пуассона. Вообще биномиальный коэффициент --- достаточно сложная штука, но мы будем работать в приближении, что $v \ll V$ ($p\ll 1$), и будет нам счастье. В этом случае введём параметр $\lambda = N p$. Его физический смысл \begin{equation*}
+	\lambda = N \frac{v}{V} = \frac{N}{V}v = n_\text{концентрация} \cdot v = \text{среднее число частиц в }  v = \overline{n}.
+\end{equation*}
+Понятно, что для параметра $\lambda$ возможны разные случаи: $\lambda < 1$, $\lambda \sim 1$ и $\lambda >1$.
+
+Зафиксируем $\lambda$, тогда вероятности находиться и не находиться в объёме $v$
+\begin{equation*}
+	p^n = \left(\frac{\lambda}{N}\right)^n,
+	\hspace{1 cm}
+	q^{N-n} = \left(1 - \frac{\lambda}{N}\right)^{N-n}.
+\end{equation*}
+Вероятность тогда
+\begin{equation*}
+	P_n(v) = \frac{N (N-1)\ldots(N-n+1)}{n!} \frac{\lambda^n}{N^n} \frac{\left(1 - \frac{n}{N}\right)^N}{1 - \left(\frac{\lambda}{N}\right)^n}
+	= \frac{\lambda^n}{n!} \frac{N(N-1) \ldots (N-n+1)}{N \cdot N \ldots N} \frac{\left(1 - \frac{\lambda}{N}\right)}{\left(1 - \frac{\lambda}{N}\right)N}.
+\end{equation*}
+Теперь, $n$ у нас --- фиксировано,а $N \gg 1$, тогда
+\begin{equation*}
+	\frac{N(N-1) \ldots (N-n+1)}{N \cdot N \ldots N} = 1 \left(1 - \frac{1}{N}\right)\ldots\left(1 - \frac{n-1}{N}\right) \longrightarrow 1, 
+	\hspace{1 cm}
+	N \to \infty,
+\end{equation*}
+\begin{equation*}
+	\left(1 - \frac{\lambda}{N}\right)^n \longrightarrow 1,
+	\hspace{1 cm}
+	\left(1 - \frac{\lambda}{N}\right)^N \longrightarrow \exp(-\lambda).
+\end{equation*}
+В результате получили, что биномиальное распределение перетекло в распределение Пуассона
+\begin{equation*}
+	P_n(v) \longrightarrow P(n,\lambda) = \frac{\lambda^n}{n!} \exp(-\lambda).
+\end{equation*}
+Его характеристика 
+\begin{equation*}
+	\langle n\rangle = \sum_{n=0}^{\infty} n P(n,\lambda) = \lambda,
+	\hspace{1 cm}
+	\langle \Delta n^2\rangle = \overline{n^2} - (\overline{n})^2 = \lambda.
+\end{equation*}
+Откуда получаем относительную флуктуацию
+\begin{equation*}
+	\frac{\sqrt{\langle \Delta n^2\rangle}}{\overline{n}} = \frac{1}{\sqrt{\overline{n}}} = \frac{1}{\sqrt{\lambda}} \longrightarrow 0,
+	\hspace{1 cm}
+	\overline{n} \gg 1
+	\hspace{2 mm}
+	(\lambda \gg 1).
+\end{equation*}
+И можно заметить, что, при таких малых относительных флуктуациях,  распределение Пуассона переходит в распределение Гаусса
+\begin{equation*}
+	\varphi_{\overline{n}, \sigma} = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left\{-\frac{(n -\overline{n})^2}{2 \sigma^2}\right\},
+	\hspace{1 cm}
+	\sigma^2 =\lambda.
+\end{equation*}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem7im1.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+Пик находится в $n = \overline{n} = \lambda$. Формально
+\begin{equation*}
+	P(n, \lambda) \longrightarrow \frac{1}{\sqrt{2 \pi \lambda}} \exp\left\{-\frac{(n-\lambda)^2}{2 \lambda}\right\}.
+\end{equation*}
+Как это делается? Сначала раскладываем в ряд $P(n,\lambda) = e^{w(n)}$ около $n = \lambda$
+\begin{equation*}
+	w(n) = w(\lambda) + \frac{1}{2}w''(\lambda) (n-\lambda)^2 + \ldots
+\end{equation*}
+У нас же $P(n,\lambda) = \frac{\lambda^n}{n!}e^{-\lambda}$, то есть
+\begin{equation*}
+	w(n) = \ln\left\{ - \lambda\frac{\lambda^n}{n!}\right\}
+	=
+	n \ln \lambda - \lambda - \ln n! = n \ln \lambda - \lambda n \ln n + n - \frac{1}{2} \ln 2\pi n,
+\end{equation*}
+где мы воспользовались формулой Стирлинга
+\begin{equation*}
+	n! \approx \left(\frac{n}{e}\right)^n \sqrt{2 \pi n},
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\ln n! \approx n \ln n - n + \frac{1}{2} \ln 2 \pi n.
+\end{equation*}
+И так возможно, внимательный читатель задался вопросом, почему в разложении нет первой производной 
+\begin{equation*}
+	w'(n) = \ln \lambda -  \ln n - 1 + 1 - \underbrace{\frac{1}{2 n}}_\text{крайне мала},
+	\hspace{1 cm}
+	w'(n) = 0
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	n = \lambda.
+\end{equation*}
+Как видно, пик вообще узкий, поэтому там, где распределение вообще отлично от нуля, у нас везде максимум и первой производной мы пренебрегаем.
+Вторая же производная будет
+\begin{equation*}
+	w''(n) = - \frac{1}{n}\mid_{n=\lambda} = -\frac{1}{\lambda}.
+\end{equation*}
+Итого получаем разложение
+\begin{equation*}
+	w(n) = \ln \frac{1}{\sqrt{2 \pi \lambda}} + \frac{1}{2 \lambda} (n - \lambda)^2.
+\end{equation*}
+Тогда 
+\begin{equation*}
+	e^{w(n)} = \frac{1}{\sqrt{2 \pi \lambda}} \exp \left\{-\frac{(n-\lambda)^2}{2 \lambda}\right\} = P(n,\lambda)
+\end{equation*}
+Получился Гаусс! Забавно, что даже при таком допущении у нас и нормировка тоже сошлась. А всё почему? Потому что пик очень узкий. 
+
+\subsection*{Неравновесная энтропия}
+Будем работать на примере Ферми статистики. Пусть есть уровень энергии системы $ \varepsilon$ вырожденный $g$ раз. И на этом уровне есть $n$ частиц ($0<n<g$).
+
+Число всех микросостояний системы $=$ число способов разместить $n$ частиц по $g$ ячейкам.
+\begin{equation*}
+	W = C_g^n = \frac{g!}{n! (g - n)!}.
+\end{equation*}
+
+Теперь усложняем. Пусть будет $j$ уровней с энергией $\varepsilon_i$, каждый из них вырожден $g_i$ раз и на каждом $n_i$ частиц ($i = 1,\ldots,j$).
+При этом число частиц на уровнях меняется, но так, чтобы сохранилось только суммарное число частиц и суммарная энергия системы
+\begin{equation*}
+	\sum_i n_i = N,
+	\hspace{1 cm}
+	\sum_i \varepsilon_i n_i = E.
+\end{equation*}
+Таким образом фиксируем $N, E$, что является весьма жестким ограничением для системы.
+
+Ищем же мы $E(n_1, n_2, \ldots, n_j, \ldots) = E(\{n_j\})$.
+А именно, хотим найти кратность вырождения с заданным фиксированным набором ${n_j}$ энергии $E \equiv$ статвесу макросостояния $(N,E)$. $W(N,E) - ?$
+\begin{equation*}
+	W = \prod_{j} W_j,
+\end{equation*}
+где $j$ -- нижний индекс по (??).
+$W(N,E, {n_j})$ -- не просто любой набор,но ещё и удовлетворяющий закону сохранению числа частиц и энергии.
+
+Пусть мы нашли кратность вырождения $E$, так что все ${n_j}$ -- фиксированные, и \textbf{неравновесная энтропия}
+\begin{equation*}
+	S = \ln W(N, E, {n_j}).
+\end{equation*}
