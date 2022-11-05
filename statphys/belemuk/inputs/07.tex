@@ -132,9 +132,94 @@
 	W = \prod_{j} W_j,
 \end{equation*}
 где $j$ -- нижний индекс по (??).
-$W(N,E, {n_j})$ -- не просто любой набор,но ещё и удовлетворяющий закону сохранению числа частиц и энергии.
+$\{n_j\}$ -- не просто любой набор,но ещё и удовлетворяющий закону сохранению числа частиц и энергии.
 
-Пусть мы нашли кратность вырождения $E$, так что все ${n_j}$ -- фиксированные, и \textbf{неравновесная энтропия}
+Пусть мы нашли кратность вырождения уровня с $E$, так что все ${n_j}$ -- фиксированные, и \textbf{неравновесная энтропия}
 \begin{equation*}
 	S = \ln W(N, E, {n_j}).
 \end{equation*}
+Здесь нужно, подчеркнуть, что $S(\{n_j\})$ -- энтропия именно от набора, который доставляет ей максимум. 
+И тогда, если $S(N,E, \{n_j\})$ $\Rightarrow$ $S$ будет равновесной термодинамической энтропией $S(E,N)$ (набор фиксированный).
+
+Все наши рассуждения упирались в то, что набор $\{n_j\}$ должен быть достаточно удачный, найдём же такой набор, что доставит максимум энтропии. Если посмотреть выше, то видно, что всё уже у нас для поиска этого набора есть
+\begin{equation*}
+	S = \sum_j = \big[\ln g_j ! - \ln n_j ! - \ln(g_j - n_j)!\big]
+		=
+		\sum_j \big[g_j \ln g_j - n_j \ln n_j - (g_j - n_j) \ln(g_j - n_j)\big]
+\end{equation*}
+И не забываем, что выполнятся должны
+\begin{equation*}
+	\sum_j n_j = N,
+	\hspace{0.5 cm}
+	\hspace{0.5 cm}
+	\sum_j \varepsilon_j n_j = E.
+\end{equation*}
+Чтобы найти такие $n_j$ которые доставляют энтропии максимум и учесть условия, воспользуемся формулой Лагранжа
+\begin{equation*}
+	\tilde{S} = S + \alpha N + \beta E
+	\hspace{1 cm}
+	\leadsto
+	\hspace{1 cm}
+	\frac{\partial \tilde{S}}{\partial{n_j}} = 0.
+\end{equation*}
+По отдельности
+\begin{equation*}
+	\frac{\partial S}{\partial n_j} = - \ln n_j - 1 + \ln(g_j - n_j) + 1 = - \ln \frac{n_j}{g_j	- n_j},
+	\hspace{1 cm}
+	\frac{\partial N}{\partial n_j} = 1,
+	\hspace{1 cm}
+	\frac{\partial E}{\partial n_j} = \varepsilon_j.
+\end{equation*}
+Таким образом получаем
+\begin{equation*}
+	- \ln \frac{n_j}{g_j - n_j} + \alpha + \beta \varepsilon_j = 0
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\frac{n_j}{g_j - n_j} = e^{\alpha + \beta \varepsilon_j} = \chi,
+\end{equation*}
+далее
+\begin{equation*}
+	n_j = g_j \chi - n_j \chi 
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	(1 + \chi) n_j = g_j \chi
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	n_j = g_j \frac{\chi}{1 + \chi} = g_j \frac{e^{\alpha + \beta \varepsilon_j}}{1 + e^{\alpha + \beta \varepsilon_j}}.
+\end{equation*}
+Вот именно такие числа $n_j$ заполнения доставляют максимум энтропии.
+Для окончательной радости нам остаётся только найти $\alpha$ и $\beta$.
+
+Сравним полученную формулу Лагранжа с известным нам дифференциалом
+\begin{equation*}
+	d S + \alpha d N + \beta d E = 0
+	\hspace{1 cm}
+	\longleftrightarrow
+	\hspace{1 cm}
+	d S + \frac{\mu}{T} d N - \frac{1}{T} d E - \frac{P}{T} d V = 0.
+\end{equation*}
+Раз мы в задаче фиксируем уровни $\varepsilon_j$, то они, являясь функцией $V$ (частицы в ящике) фиксируют и объём: $V = \const$ $\Rightarrow$ $d V = 0$.
+
+Тогда не трудно сравнить оставшиеся члены и понять, что
+\begin{equation*}
+	\alpha = \frac{\mu}{T},
+	\hspace{1.5 cm}
+	\beta = - \frac{1}{T}.
+\end{equation*}
+Для $S$ термодинамической энтропии хоть вынь хоть положь, эти частицы. И ей же и является доставленная в максимум статистическая энтропия $d S + \alpha d N + \beta d E$.
+
+Подставляя коэффициента $\alpha, \beta$ получаем что 
+\begin{equation*}
+	n_i = g_i \frac{1}{e^{\frac{\varepsilon_i - \mu}{T}}+1}
+	\hspace{1 cm}
+	\leadsto
+	\hspace{1 cm}
+	\frac{n_i}{g_i} = f_i = \frac{1}{e^{\frac{\varepsilon_i - \mu}{T}}+1},
+\end{equation*}
+где $f_i$ -- числа заполнения $i$-го уровня. А вся эта красота называется распределением Ферми-Дирака.
+
+А теперь остаётся просуммировать по всем наборам.
+Среди этих сумм одно слагаемое сильно перевешивает все остальные. Оно и будет давать главный вклад в энтропию, прямо как в начале семинара, где мы рассуждали про острый пик.
