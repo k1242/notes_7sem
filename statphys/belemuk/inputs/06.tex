@@ -1,0 +1,233 @@
+\subsection*{продолжаем}
+\begin{equation*}
+	Z_{1 \text{ вращ}}^\text{орто} = \sum_{L = 1,2,5 \ldots} =3 e^{- 2 T_c/T} + 7 e^{-12 T_c/T} + \ldots
+\end{equation*}
+Энергия вращаетльного движения тогда
+\begin{equation*}
+	E_{1 \text{ вращ}}^\text{орто} = T^2 \frac{\partial}{\partial T} \ln Z_{1 \text{ вращ}}^\text{орто} = T^2 \frac{\partial}{\partial T} \ln 3 e^{- 2 T_c /T}\left(1 + \frac{7}{3} e^{-10 T_c/T} + \ldots \right)
+	= T^2 \frac{\partial}{\partial T} \left(- \frac{2 T_c}{T} + \frac{7}{3} e^{-10 \frac{T_c}{T}}\right) = 2 T_c + \frac{70}{3} e^{- 10 T_c/T}.
+\end{equation*}
+И тогда
+\begin{equation*}
+	C_{1 \text{ вращ}}^\text{орто} = \frac{700}{3} \frac{T_c^2}{T^2} e^{-10 T_c/T} + \ldots.
+\end{equation*}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem6im1.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+
+
+Может показаться, что к единице ничего не стремится, но
+\begin{equation*}
+	Z_{1 \text{ вращ}}^\text{орто} = \int_{0}^{+\infty} d L (2 L + 1) e^{-L(L+1)T_c/T} = \frac{T}{T_c}
+	\hspace{0.5 cm}
+	\leadsto
+	\hspace{0.5 cm}
+	E_{1 \text{ вращ}}^\text{орто} = T^2 \frac{\partial}{\partial T} \ln \frac{T}{T_c} = T
+	\hspace{0.5 cm}
+	\leadsto
+	\hspace{0.5 cm}
+	C_{1 \text{ вращ}}^\text{орто} = 1.
+\end{equation*}
+Теперь в качестве упражнения можно рассмотреть смесь в состоянии термодинамического равновесия орто + пара водород $N_\text{орто} + N_\text{пара} = N$. Показать, что
+\begin{equation*}
+	\frac{N_\text{орто}(T)}{N_\text{пара}(T)} = 3 \frac{Z_\text{орто}(T)}{Z_\text{пара}(T)}.
+\end{equation*}
+Перейдём к теории флуктуаций\footnote{Сейчас у меня сядет ноут, потому что в 520ГК не работает розетка. Поэтому возможно когда-то (когда ещё и первый семинар) появится и эта часть конспекта.}
+\subsection*{Термодинамические квазиравновесные флуктуации}
+\subsubsection*{Изолированное тело}
+Рассматриваем изолированное тело, хотим посмотреть вероятность находится в неравновесном состоянии, задаваемом параметром $x$ -- отклонение от равновесного состояния. 
+\begin{equation*}
+	w(x) \sim \frac{\text{число всех микростостояний отвечающих } x}{\text{полное число всех возможных микросостояний}} \sim \text{статвес состояния } x \sim e^{S(x)}.
+\end{equation*}
+\begin{equation*}
+	S(x) = S(x_0) + \Delta S,
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	w(x) \sim e^{\Delta S(x)}
+\end{equation*}
+где $S(x_0)$ -- отвечает равновесию системы.
+
+\subsubsection*{Тело в среде}
+Среда есть термостат. К телу относятся переменные $\{S,V,T,P\}$, а к термостату относятся $\{S_0, V_0, T_0, P_0\}$ -- и он всегда в равновесии.
+Вводим снова параметр $x$ -- харакатеризующий отклонение состояние тела от равновесия
+\begin{equation*}
+	w(x) \sim e^{\Delta S_\text{tot}(x)},
+	\hspace{1 cm}
+	\Delta S_\text{tot} = \Delta S + \Delta S_0.
+\end{equation*}
+Мы считаем, что состояние тремостата остаётся равновесным. ТО есть $T_0$ и $P_0$ остаются постоянными.
+Тогда для него справедлив второй закон термодинамики
+\begin{equation*}
+	\Delta S_0 = \frac{\delta Q_0}{T_0} = - \frac{\delta Q}{T_0}.
+\end{equation*}
+Ну а тепло ему, кроме как от тела получат неоткуда.
+
+А вот тело, хоть и отклоняется от равновесия, но всегда можем записать первый закон
+\begin{equation*}
+	\delta Q = \Delta E + A_\text{против сил внешнего давления} = \Delta E + P_0 \Delta V,
+\end{equation*}
+так как внешнее давление это и есть $P_0$.
+Таким образом получаем для энтропии теромтстата
+\begin{equation*}
+	\Delta S_0 = - \frac{\Delta E + P_0  \Delta V}{T_0}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\Delta S_\text{tot} = \Delta S - \frac{\Delta E + P_0 \Delta V}{T_0} = \frac{T_0 \Delta S - \Delta E - P_0  \Delta V}{T_0}.
+\end{equation*}
+Таким образом 
+\begin{equation*}
+	w(x) \sim \exp\left(\frac{T_0 \Delta S - \Delta E - P_0  \Delta V}{T_0}\right),
+	\hspace{1 cm}
+	x = \{\Delta S, \Delta V, \Delta E\}.
+\end{equation*}
+
+Теперь предположим, что флуктуации малы. Тогда $E(S,V)$ имеет тот же функциональный вид, тот же самый, как и в равновесии.
+
+И так $\Delta S, \Delta V \longrightarrow$ дают нам $\Delta E$. Вариацию же $\Delta E$ саму по себе можно выразить по Тейлору
+\begin{equation*}
+	\Delta E = d E + \frac{1}{2} d^2 E + \ldots
+\end{equation*}
+Кроме того, вспоминая дифференциал энергии
+\begin{equation*}
+	d E = T d S - P d V = T_0 \Delta S + P_0 \Delta V,
+	\hspace{1 cm}
+	\left(\frac{\partial E}{\partial S}\right)_V = T = T_0,
+	\hspace{0.5 cm}
+	\left(\frac{\partial E}{\partial V}\right)_S = P = P_0.
+\end{equation*}
+Дифференциал второго порядка записывается не сложнее
+\begin{equation*}
+	\delta^2 E = d(d E) = d T dS - d P d V \approx \Delta T \Delta S - \Delta P \Delta V.
+\end{equation*}
+Тогда распишем то, что стоит в степени экспоненты $w(x)$:
+\begin{equation*}
+	T_0 \Delta S - P_0 \Delta V - \Delta E = T_0 \Delta S - P_0 \Delta V - [T_0 \Delta S - P_0 \Delta V] - \frac{1}{2} (\Delta T \Delta S - \Delta P - \Delta V).
+\end{equation*}
+Теперь посокращаем что нужно и получи
+\begin{equation*}
+	w(x) \sim \exp\left(-\frac{\Delta T \Delta S - \Delta P \Delta V}{2 T_0}\right) = \exp\left(-\frac{\Delta T \Delta S - \Delta P \Delta V}{2 T}\right),
+\end{equation*}
+где в последнем равенстве опустили нижний индекс как принято, хотя он и подразумевается.
+При этом стоит понимать что все приращения (флуктуации) испытывает именно тело.
+
+Главная \textbf{идея} решения всяких задач на флуктуацию заключается в том, что две переменные флуктуируют, а флуктуации двух других получают через их зависимость от флуктуирующих\footnote{В принципе выбирать можно любые две величины, но на практике используется только два варианта: $(T,V)$, и $(S,P)$.}.
+
+
+\subsubsection*{Пример}
+Пусть независимо флуктуируют переменные из набора $(T,V)$, тогда 
+\begin{equation*}
+	P(T,V) \longleftrightarrow \Delta P,
+	\hspace{1 cm}
+	S(T,V) \longleftrightarrow \Delta S,
+\end{equation*}
+при чем соотношения для зависимостей берем из равновесной термодинамической системы.
+И так
+\begin{equation*}
+	\Delta P = \left(\frac{\partial P}{\partial T}\right)_V \Delta T + \left(\frac{\partial P }{\partial V}\right)_T \Delta V,
+	\hspace{1 cm}
+	\Delta S = \left(\frac{\partial S}{\partial T}\right)_V \Delta T + \left(\frac{\partial S }{\partial V}\right)_T \Delta V.
+\end{equation*}
+Подставляем это всё в то, что стоит в экспоненте $w(x)$
+\begin{equation*}
+		\Delta P \Delta V - \Delta T \Delta S = \left(\frac{\partial P}{\partial T}\right)_V \Delta T \Delta V + \left(\frac{\partial P}{\partial V}\right)_T \Delta V^2 - \left(\frac{\partial S}{\partial T}\right)_V \Delta T^2 - \left(\frac{\partial S}{\partial V}\right)_T \Delta V \Delta T.
+\end{equation*}
+Как видно флуктуации всех четырёх переменных выражаются через какие-то две. Теперь воспользуемся соотношениями Максвелла
+\begin{equation*}
+	d F = - S d T - P d V
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\left(\frac{\partial S}{\partial V}\right)_T = \left(\frac{\partial P}{\partial T}\right)_V,
+\end{equation*}
+получаем, что перекрестные $\Delta V$ и $\Delta T$ сокращаются! Итого
+\begin{equation*}
+	w(x) \sim 
+		\exp\left(\frac{\left(\frac{\partial P}{\partial V}\right)_T \Delta V^2}{2 T}\right)
+		\exp\left()\frac{\left(\frac{\partial S}{\partial T}\right)_V \Delta T^2}{2 T}\right).
+\end{equation*}
+Сравним полученный вид $w(x)$ с распределением Гаусса от двух независимых случайных величин $x, y$
+\begin{equation*}
+	w(x,y) \sim \exp \left(- \frac{(\Delta x)^2}{2 \sigma_x^2}\right)
+				\exp \left(- \frac{(\Delta y)^2}{2 \sigma_y^2}\right),
+\end{equation*}
+где введены дисперсии $\sigma_x^2 = \langle (\Delta x)^2\rangle$ и $\sigma_y^2 = \langle (\Delta y)^2\rangle$. Таким образом можно сделать вывод, что в системе мы наблюдаем гауссовы флуктуации!
+
+Теперь начинаем собирать плоды: сверяем и сравниваем; как у в нашей задаче выражаются дисперсии
+\begin{equation*}
+	\langle \Delta V^2\rangle = - \frac{T}{\left(\frac{\partial P}{\partial V}\right)_T} = - T \left(\frac{\partial V}{\partial P}\right)_T,
+	\hspace{1 cm}
+	\langle \Delta T^2\rangle = - \frac{T}{\left(\frac{\partial S}{\partial T}\right)_V} = \frac{T^2}{C_V}.
+\end{equation*}
+Ещё один плод наших рассуждений --- это что $\langle \Delta T \Delta V\rangle = 0$.
+
+Продолжаем. Раз у нас $E(T,V)$ и $\Delta E$ не абы какое, а
+\begin{equation*}
+	\Delta E = \left(\frac{\partial E}{\partial T}\right)_V \Delta T + \left(\frac{\partial E}{ \partial V}\right)_T \Delta V 
+	= C_V \Delta T + \left(\frac{\partial E}{ \partial V}\right)_T \Delta V.
+\end{equation*}
+И так, $ T,V$ -- родные переменные для свободное энергии, поэтому
+\begin{equation*}
+	\left(\frac{\partial E}{\partial T}\right)_V = \frac{\partial}{\partial V} (F + T S)_T = \left(\frac{\partial F}{ \partial V}\right)_T + T \left(\frac{\partial S}{\partial V}\right)_T = - P + T \left(\frac{\partial P}{\partial T}\right)_V.
+\end{equation*}
+Таким образом
+\begin{equation*}
+	\Delta E = C_V \Delta T + \left[T \left(\frac{\partial P}{\partial T}\right)_V - P\right] \Delta V,
+\end{equation*}
+и тогда
+\begin{equation*}
+	\langle  \Delta E^2\rangle = C_V^2 \overline{\Delta T^2} + 
+		\left[T \left(\frac{\partial P}{\partial T}\right)_V - P\right]^2 \overline{\Delta V^2} + (\ldots) \cdot \underbrace{\overline{\Delta T \Delta V}}_{0},
+\end{equation*}
+и подставляя выражения для дисперсий получим
+\begin{equation*}
+	\langle  \Delta E^2\rangle = T^2 C_V + - T\left[T \left(\frac{\partial P}{\partial T}\right)_V - P\right]^2 \left(\frac{\partial V}{\partial P}\right)_T.
+\end{equation*}
+Все ли плоды мы сняли? Нет. Есть ещё плоды!
+
+Теперь посчитаем
+\begin{equation*}
+	\langle \Delta P \Delta V\rangle = 
+		\left(\frac{\partial P }{\partial T}\right)_V \overline{\Delta T \Delta V} + \left(\frac{\partial P}{\partial V}\right)_T \overline{\Delta V^2} =  \left(\frac{\partial P}{\partial V}\right)_T (-T)  \left(\frac{\partial V}{\partial P}\right)_T = - T.
+\end{equation*}
+Аналогично
+\begin{equation*}
+	\langle \Delta S \Delta T\rangle = 
+	\left(\frac{\partial S}{\partial T}\right)_V \overline{\Delta T^2} + \left(\frac{\partial S}{\partial V}\right)_T \overline{\Delta V \Delta T} = \left(\frac{\partial S}{\partial T}\right)_V \frac{T^2}{C_V} = T.
+\end{equation*}
+
+И на последок рассмотрим пару $(S,P)$ -- как независимые переменные. Тогда остальные две переменные системы зависят от них $T(S,P)$ и $V(S,P)$, а их флуктуации
+\begin{equation*}
+	\Delta T = \left(\frac{\partial T}{\partial S}\right)_P \Delta S + \left(\frac{\partial T}{\partial P}\right)_S \Delta P,
+	\hspace{1 cm}
+	\Delta V = \left(\frac{\partial V}{\partial S}\right)_P \Delta S + \left(\frac{\partial V}{\partial P}\right)_S \Delta P.
+\end{equation*}
+Опять распишем то, что у нас там в степени экспоненты стояло
+\begin{equation*}
+	\Delta P \Delta V - \Delta T \Delta S = \left(\frac{\partial V}{\partial S}\right)_P \Delta S \Delta P + \left(\frac{\partial V}{\partial P}\right)_S \Delta P^2 - \left(\frac{\partial T}{\partial S}\right)_P \Delta S^2 - \left(\frac{\partial T}{\partial P}\right)_S \Delta P \Delta S.
+\end{equation*}
+Вспоминаем, что переменные $(S,P)$ родные для энтальпии $H(S,P)$
+\begin{equation*}
+	d H = T d S + V d P,
+	\hspace{1 cm}
+	\left(\frac{\partial T}{\partial P}\right)_S = \left(\frac{\partial V}{\partial S}\right)_P.
+\end{equation*}
+Опять же перекрестные сокращаются
+\begin{equation*}
+	w(x) \sim 
+		\exp \left(\frac{\left(\frac{\partial V}{\partial P}\right)_S \Delta P^2}{2 T}\right)
+		\exp \left(-\frac{\left(\frac{\partial T}{\partial S}\right)_P \Delta S^2}{2 T}\right).
+\end{equation*}
+Тогда получаем
+\begin{equation*}
+	\langle \Delta P^2\rangle = - \frac{T}{\left(\frac{\partial V}{\partial P}\right)_S} = - T \left(\frac{\partial P}{\partial V}\right)_S,
+	\hspace{1 cm}
+	\langle \Delta S^2\rangle = \frac{T}{\left(\frac{\partial T}{\partial S}\right)_P} = T \left(\frac{\partial S}{\partial T}\right)_P = C_P.
+\end{equation*}
+\begin{equation*}
+	\langle \Delta S \Delta P\rangle = 0.
+\end{equation*}

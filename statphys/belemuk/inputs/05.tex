@@ -1,0 +1,196 @@
+\subsection*{Термодинамические  функции классического больцмановского газа}
+Продолжаем, то что было с прошлого раза.
+\begin{equation*}
+	p = (\vc{p}_1, \vc{p}_2, \ldots, \vc{p}_N),
+	\hspace{1 cm}
+	r = (\vc{r}_1, \vc{r}_2, \ldots, \vc{r}_N).
+\end{equation*}
+Предположим только, что частицы не взаимодействуют, и не в поле тяжести, тогда
+\begin{equation*}
+	Z = \int \frac{1}{N!} \frac{d^3 p_1 }{(2 \pi \hbar)^{3}} \ldots \frac{d^3 p_N }{(2 \pi \hbar)^{3}} \underbrace{\int d^3 r_1 \ldots d^3 r_N}_{V} e^{-\frac{p_1^2 + \ldots + p_N^2}{2 m T}}=
+	\frac{V^N}{N!} \left(\int \frac{d^3 p}{(2 \pi \hbar)^3} e^{- \frac{p^2}{2 m T}}\right)^N
+\end{equation*}
+Получили интеграл, который отражает по смыслу квантовый объём $J = 1/V_Q$:
+\begin{equation*}
+	J = \int \frac{d^3 p}{(2 \pi \hbar)^3} e^{- \frac{p^2}{2 m T}} = \frac{(2 \pi m T)^{2/3}}{(2 \pi \hbar)^{3}},
+	\hspace{1 cm}
+	V_Q = \frac{(2 \pi \hbar)^3}{(2 \pi m T)^{2/3}} = \left(\frac{h}{\sqrt{2 \pi m T}}\right)^{3}
+\end{equation*}
+То есть статвес будет
+\begin{equation*}
+	Z = \frac{V^N}{N!} J^N = \frac{V^N}{N!} \frac{1}{V_Q^N},
+\end{equation*}
+Теперь введём тепловой импульс
+\begin{equation*}
+	p_T = \sqrt{2 \pi m T}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\lambda_T = \frac{h}{p_T} = \frac{h}{\sqrt{2 m E}},
+\end{equation*}
+где $\lambda_T$ -- тепловая длина волна де-Бройля, через неё сразу удобно выразить квантовый объём
+\begin{equation*}
+	V_Q = (\lambda_T)^3 = \left(\frac{2 \pi \hbar^2}{MT}\right)^{3/2}
+\end{equation*}
+Физический смысл $V_Q$
+\begin{itemize}
+	\item газ рассматриваем как классический, когда $\frac{V}{N} \gg V_q$;
+	\item газ рассматриваем как квантовый, когда $\frac{V}{N} < V_Q$.
+\end{itemize}
+То есть при какой-то температуре -- температуре вырождения -- мы начинаем считать газ квантовым.
+\begin{equation*}
+	T = T_\text{выр}:
+	\hspace{1 cm}
+	\frac{V}{N} \simeq V_Q
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\frac{1}{n} \simeq \left(\frac{2 \pi \hbar^2}{m T_\text{выр}}\right)^{2/3}.
+\end{equation*}
+Таким образом
+\begin{equation*}
+	T_\text{выр} \sim \frac{\hbar^2}{m} n^{2/3}.
+\end{equation*}
+\begin{itemize}
+	\item  для атомов: $m \sim 10^{-23}$ г, $n \sim 10 ^{19}$ см$^3$ будет $T_\text{выр} \sim 0.1 $ К;
+	\item для электронов $m \sim 10^{-27}$ г, $n \sim 10 ^{22}$ см$^3$ будет $T_\text{выр} \sim 10^4-10^5 $ К
+\end{itemize}
+
+Продолжим работу со статсуммой, возьмём формулу Стирлинга
+\begin{equation*}
+	Z = \frac{V^N}{N!} \frac{1}{V_Q^N}, = \left(\frac{e V}{N}\right)^{N} \frac{1}{V_Q},
+	\hspace{1 cm}
+	N! \simeq \left(\frac{N}{e}\right)^{N}.
+\end{equation*}
+А свободная энергия для классического газа
+\begin{equation*}
+	F = - T \ln Z = - T N \ln \frac{e V}{N} \frac{1}{V_Q(T)}.
+\end{equation*}
+Ну а теперь зная свободную энергию можно навырожать ещё кучу всего
+\begin{equation*}
+	d F = - S d T - P d V + \mu d N.
+\end{equation*}
+\begin{equation*}
+	\mu = \left(\frac{\partial F}{\partial N}\right)_{T, V} = - T \ln \frac{e V}{N} \frac{1}{V_Q} + T N \underbrace{\frac{\partial}{\partial N} \ln N \tilde{f}(V,T)}_{1/N} = - T \ln \frac{V}{N} \frac{1}{V_Q}.
+\end{equation*}
+Так получаем химический потенциал больцмановского газа
+\begin{equation*}
+	\mu(T, V, N) = - T \ln \frac{V}{N} \left(\frac{m T}{2 \pi \hbar^2}\right)^{3/2}.
+\end{equation*}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem5im1.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+
+Можно подумать что значит отрицательный химический потенциал
+\begin{itemize}
+	\item  $\Delta F = \mu \Delta N$ --- при добавлении частицы в систему свободная энергия уменьшается;
+	\item $\mu = (\partial E/\partial N)_{S,V}$, а $E = \frac{3}{2} N T (S,V, N)$ --- при добавлении частицы при постоянной температуре энергия возрастет, надо быть аккуратным.
+\end{itemize}
+Ещё смысл -- число частиц в квантовом объёме в классическом газе должно быть мало, поэтому $\mu < 0$ из следующих соображений:
+\begin{equation*}
+	e^{\mu/T} = n V_Q \ll 1.
+\end{equation*}
+
+Теперь можно получить давление
+\begin{equation*}
+	P(T, V, N) = \left(-\frac{\partial F}{\partial V}\right)_{T, N} = T N \frac{\partial}{\partial V} \ln V \tilde{\tilde{f}}(N,T)
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	P = \frac{N}{V} T.
+\end{equation*}
+
+ И получим ещё энтропию
+ \begin{equation*}
+ 	S = \left(- \frac{\partial F}{\partial T}\right)_{V, N} = N \ln \frac{e V}{N} \frac{1}{V_Q} + \underbrace{T N \frac{\partial}{\partial T} \ln T^{3/2} \tilde{\tilde{\tilde{f}}}}_{\frac{3}{2}N}
+ 	= N \ln\frac{V}{N}\frac{1}{V_Q} + N + \frac{3}{2} N.
+ \end{equation*}
+ Получили так называемую формулу Сакура-Тетроде -- получаем ту самую константу, с точностью до которой мы её не знали из термодинамики!
+ \begin{equation*}
+ 	S = N \left[\ln \frac{V}{N}\frac{1}{V_Q} + \frac{5}{2}\right].
+ \end{equation*}
+
+ Теперь повыражаем энергию
+ \begin{equation*}
+ 	E = F + TS = F + T \left(- \frac{\partial F}{\partial T}\right) = - T \ln Z + T \frac{\partial }{\partial T} T \ln Z = - T \ln Z + T \ln Z + T^2 \frac{\partial}{\partial T} \ln Z,
+ \end{equation*}
+ то есть
+ \begin{equation*}
+ 	E(T, V, N) = T^2 \frac{\partial}{\partial T} \ln Z.
+ \end{equation*}
+А $Z$ мы знаем (для классического газа сейчас работаем везде)
+\begin{equation*}
+	E = T^2 N \frac{\partial}{\partial T} \ln T^{3/2} \tilde{\tilde{\tilde{\tilde{f}}}}(V, N) = T^{2} N \frac{3}{2} \frac{1}{T} = \frac{3}{2} N T
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	E = \frac{3}{2} N T.
+\end{equation*}
+На этом кажется с классическим газом у нас всё.
+Решим теперь задачу
+\subsection*{Вращательная теплоёмкость}
+Ну понятно, что молекула может двигаться не только поступательно, но и вращательно. Рассмотрим двухатомную молекулу. У неё есть энергия связанная с вращением
+\begin{equation*}
+	E_\text{вращ} = \frac{\vc{L}^2}{2 I},
+	\hspace{1 cm}
+	I = M R_0^2,
+\end{equation*}
+где $M$ -- приведенная масса, $R_0$ -- расстояние между молекулами.
+Передём к гамильтониану такого движения
+\begin{equation*}
+	\hat{H}_\text{вращ} = \frac{\hbar^2}{2 I} \hat{\vc{L}}^2
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	E_L = \frac{\hbar^2}{2 I} L(L+1).
+\end{equation*}
+Получили уровни энергию вырожденную $g = 2L +1$ раз, тогда статсумма
+\begin{equation*}
+	Z_{1\text{ вращ}} = \sum_{L=0}^{\infty} (2 L +1) e^{- E_L/T} = 
+	\sum_{L=0}^{\infty} (2 L +1) e^{- \frac{\hbar^2}{2 I} \frac{L (L+1)}{T}}
+\end{equation*}
+Масштаб энергий кванта вращательной энергии $T_C = \frac{\hbar^2}{2 I} \sim 1 - 10$ К.
+
+Будем работать в приближении \textbf{классического рассмотрения} --- $T \gg T_c$, то есть экспонента в статсумме меняется плавно, слабо, пока $L \leq L_max$, которое определяется $\frac{T_c}{T} L_{max}^2 \approx 1$.
+Ну то есть до $L_{max}$ -- сумму заменяю интегралом, а далее всё экспоненциально подавлено 
+\begin{equation*}
+	Z_{1 \text{ вращ}} = \int_{0}^{+\infty} (2L+1) e^{- \frac{T_c}{T}L (L+1)} d L = \frac{T}{T_c}.
+\end{equation*}
+Отсюда
+\begin{equation*}
+	E_{1 \text{ вращ}} = T^2 \frac{\partial}{\partial T} \ln Z_{1 \text{вращ}} = T^2 \frac{\partial}{\partial T} \ln \frac{T}{T_c} = T
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\frac{C_\text{вращ}}{N} = c_{1 \text{вращ}} = 1.
+\end{equation*}
+И вот казалось бы всё хорошо, теплоёмкость двухатомного газа $5/2$, класс. Но если мы начнём его охлаждать, то заметим, что она в какой-то момент резко падает до $3/2$.
+
+Поэтому нужно поработать в \textbf{квантовом режиме} --- $T \leqslant T_c$. Тут уже и сумму на интеграл не заменить, и вообще грустно, зато компьютер сравнительно такое небольшое число частиц посчитает быстро.
+\begin{equation*}
+	Z_{1\text{ вращ}}  = 
+	\sum_{L=0}^{\infty} (2 L +1) e^{- \frac{T_c}{T} \frac{L (L+1)}{T}}
+\end{equation*}
+Тут ещё придется задуматься о том, например, для молекулы из одинаковых атомов со спинами, например $s_{1,2} = 1/2$ (для $H_2$). И вот тут заиграет ферми и бозе статистики, ведь от суммарного спина $S = 0, 1$ будет выцепляться симметричность 
+\begin{itemize}
+	\item параводород $S= 0$, тогда $L = 0, 2, 4, 6, \ldots$;
+	\item ортоводород $S= 1$, тогда $L = 1, 3, 5, 7, \ldots$;
+\end{itemize}
+То есть
+\begin{equation*}
+	Z_{1 \text{ вращ}}^\text{пара} = \sum_{L = 0, 2, 4 \ldots} = 1 + s e^{- 6 \frac{T_c}{T}} + \ldots
+\end{equation*}
+\begin{equation*}
+	E_{1 \text{ вращ}}^\text{пара} = T^2 \frac{\partial}{\partial T} \ln\left(1 + s e^{- 6 \frac{T_c}{T}} + \ldots \right) = 30 T_c e^{-6 T_c/T} + \ldots
+\end{equation*}
+\begin{equation*}
+	C_{1 \text{ вращ}}^\text{пара} = \frac{d E}{d T} = \frac{180 T_c^2}{T^2} e ^{- 6 T_c/T} + \ldots
+\end{equation*}
+Для орто водорода теперь
+\begin{equation*}
+	Z_{1 \text{ вращ}}^\text{орто} = 3 e^{- 2 T_c/T} + 7 e^{-12 T_c/T} + \ldots
+\end{equation*}
+
