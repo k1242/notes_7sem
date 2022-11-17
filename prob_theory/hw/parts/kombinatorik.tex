@@ -1,13 +1,27 @@
-\textbf{Т8}. \red{\xmark}
+\textbf{Т8}. Хотя бы 1 единица на четырёх костях -- $A$, хотя бы одна пара единиц при 24 бросках двух кубов -- $B$:
+\begin{equation*}
+	P(A) = 1 - \left(\frac{5}{6}\right)^4 \approx 0.52,
+	\hspace{5 mm} 
+	P(B) = 1- \left(\frac{35}{36}\right)^{24} \approx 0.49,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	P(A) > P(B).
+\end{equation*}
 
-\textbf{Т9}. \red{\xmark}
+\textbf{Т9}. Перебрав все варианты 
+\begin{equation*}
+	(6, 4, 1) \text{ x6},\ 
+	(6, 3, 2) \text{ x6},\ 
+	\ldots,\
+	(4, 4, 3) \text{ x3},
+\end{equation*}
+находим 27 реализаций для 11 очков и 25 реализаций для 12 очков, таким образом 11 выпадает чаще.
 
 \textbf{Т10}. Найдём вероятность обнаружить всё четыре масти, взяв 6 карт из колоды. Всего карт каждой масти 13. Пусть событие
 $A_i$ -- не вытащили карты $i$-й масти. Нам нужно найти $p = 1-P(A_1\cup A_2\cup A_3\cup A_4)$:
 \begin{equation*}
 	P(A_1\cup A_2\cup A_3\cup A_4\cup) = 4 P(A_i) - 6 P(A_i \cap A_j) + 4 P(A_i \cap A_j \cap A_k),
 \end{equation*}
-так как масти эквивалентны и $P(A_1\cap A_2\cap A_3\cap A_4\cap) = 0.$ Размер $|\Omega| = C^6_{52}$, тогда
+так как масти эквивалентны и $P(A_1\cap A_2\cap A_3\cap A_4) = 0.$ Размер $|\Omega| = C^6_{52}$, тогда
 \begin{equation*}
 	P(A_i) = \frac{C^6_{39}}{C^6_{52}}, 
 	\hspace{5 mm} 

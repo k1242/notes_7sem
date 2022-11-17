@@ -22,9 +22,44 @@
 \end{equation*}
 
 
-\textbf{Т4}. \red{\xmark}
+\textbf{Т4}. Знаем, что $P(A_n)=1$, тогда
+\begin{equation*}
+	P(A_n \triangle \Omega) = 0,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	P(\cap_{n=1}^{\infty} A_n \Delta \Omega) \leq \sum_{n=1}^{\infty} P(A_n \triangle \Omega) = 0,
+\end{equation*}
+откуда получаем требуемое утверждение.
 
-\textbf{Т5}. \red{\xmark}
+\textbf{Т5}. Начнём с $P(\lowlim_{n \to \infty} A_n) \leq \lowlim_{n \to \infty} P(A_n)$:
+\begin{equation*}
+	\lowlim_{n \to \infty} A_n = \bigcup_{n=1}^{\infty} \bigcap_{k \geq n} A_k = \lim_n B_n.
+\end{equation*}
+По непрерывности меры $P(\lowlim_{n \to \infty} A_n) = \lim_{n \to \infty} P(B_n)$, и так как $B_n$  -- пересечения $A_k$, то есть $P(B_n) \leq P(A_n)$, получаем
+\begin{equation*}
+	P(\lowlim_{n\to\infty} A_n) = \lim_{n \to \infty} P(B_n) \leq \lowlim_{n \to \infty} P(A_n).
+\end{equation*}
+
+Теперь покажем, что $\lowlim_{n \to \infty} P(A_n) \leq \uplim_{n \to \infty} P(A_n)$. Равносильно
+\begin{equation*}
+	\inf_{\{i\}} \lim_{i \to \infty} P(A_j) \leq \sup_{\{j\}} \lim_{j \to \infty} P(A_j),
+\end{equation*}
+что доказывает утверждение. 
+
+
+Покажем $\uplim_n P(A_n) \leq P(\uplim_{n \to \infty} A_n)$:
+\begin{equation*}
+	\uplim_{n \to \infty} A_n = \bigcap_{n=1}^{\infty} \bigcup_{k=1}^{n} A_k = \lim_n B_n,
+\end{equation*}
+получилась монотонная последовательность.  По непрерывности 
+\begin{equation*}
+	P(\uplim_{n \to \infty} A_n) = \lim_{n \to \infty} P(B_n),
+\end{equation*}
+но $P(B_n) \geq P(A_n)$, откуда находим
+\begin{equation*}
+	P(\uplim_{n \to \infty} A_n) = \lim_{n \to \infty} P(B_n) \geq \lim_{n \to \infty} P(A_n).
+\end{equation*}
+
+
 
 
 \textbf{Т6}. Покажем, что $\forall A, B$ $|P(AB)-P(A)P(B)|\leq \frac{1}{4}$. По отдельности, т.к. $P(A) \geq P(AB)$ и $P(B) \geq P(AB)$ находим
@@ -37,5 +72,7 @@
 \end{equation*}
 в силу уже доказанного неравенства.
 
-\textbf{Т7}. \red{\xmark}
+\textbf{Т7}. Возьмём $A_{2k} = \Omega$ и $A_{2k+1} = \varnothing$.
+
+
 
