@@ -1,0 +1,245 @@
+\subsection*{Классическая система}
+Классической системой будем называть случай, когда число мест, куда можно положить частицу много больше числа этех частиц $g_j \gg n_j$. Так называемый автобус поздней ночью.
+Число различных квантовых состояний на уровне $\varepsilon_j$
+\begin{equation*}
+	W_j = \underbrace{g_j g_j \ldots g_j g_j}_{n_j} \frac{1}{n_j!} = \frac{g_j^{n_j}}{n_j!}.
+\end{equation*}
+Тогда число состояний системы
+\begin{equation*}
+	W = \prod_j W_j  = \prod_j \frac{g_j^{n_g}}{n_j !}.
+\end{equation*}
+Энтропия же в таком случае
+\begin{equation*}
+	S(\{n_j\}) = \ln W_j = \sum_j \ln \frac{g_j^{n_g}}{n_j !} = \sum_j \ln \left(\frac{e g_j}{n_j}\right)^{n_j}
+	= \sum_j n_j \ln \frac{e g_j}{n_j},
+\end{equation*}
+где мы воспользовались формулой Стирлинга $n_j! \approx \left(\frac{n_j}{e}\right)^{n_j}$.
+
+Ищем максимум $S(\{n)j\})$ при условиях, что $\sum_j n_j = N$ и $\sum_j n_j \varepsilon_j = E$.
+По метода Лагранжа составляем
+\begin{equation*}
+	\tilde{S} = S + \alpha N + \beta E
+	\hspace{1 cm}
+	\leadsto
+	\hspace{1 cm}
+	\frac{\partial\tilde{S}}{\partial n_j} = 0,
+\end{equation*}
+ищем вот так вот набор, доставляющий ей максимум. Получаем его
+\begin{equation*}
+	n_i = g_i e^{-\mu/T} e^{- \varepsilon_i/T}.
+\end{equation*}
+Подставляя такой набор в $S(\{n_j\}) \longrightarrow S_\text{равн}$ получаем термодинамическую энтропию.
+
+Посчитаем эту самую энтропию в максимуме
+\begin{equation*}
+	S_\text{max} = \sum_i n_i \ln \left(e\frac{1}{e^{\frac{\mu}{T} - \frac{e_i}{T}}}\right)
+	= \sum_i n_i \left(1 - \frac{\mu}{T} + \frac{\varepsilon_i}{T}\right) 
+	=- N - \frac{\mu}{T} N + \frac{1}{T} E.
+\end{equation*}
+Домножим на $T$
+\begin{equation*}
+	T S = T N - \mu N + E
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\underbrace{\mu N}_{\Phi} = \underbrace{E - TS}_{F} + T N
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\Phi = F + TN.
+\end{equation*}
+А про эти термодинамические потенциалы мы помним, что 
+\begin{equation*}
+	\Phi = F + P V
+	\hspace{1.5 cm}
+	\Rightarrow
+	\hspace{1.5 cm}
+	PV = NT.
+\end{equation*}
+Получили Уравнение Состояния Идеального Газа!
+
+\subsection*{Большой Канонический Ансамбль}
+Всё отличие новой задачи в том, что у нас есть выпрыгивания частиц из объёма $V$. Термостат нам задаёт $T$ и $\mu$, но сам по себе обменивается с телом порциями $\delta N$ и $\delta Q$.
+Макрососотяние характеризуется набором $(T, V, \mu)$. Вероятность системы иметь $N$ частиц в квантовом состоянии $n$ задается выражением
+\begin{equation*}
+	W_{N,n} = \frac{1}{\mathcal{Z}} e^{\frac{N \mu - E_{N,n}}{T}}.
+\end{equation*}
+Это называется \textbf{большим каноническим распределением}, или \textbf{распределением Гиббса}.
+
+Здесь $E_{N,n}$ -- уровни энергии системы, $\mathcal{Z} = \sum_{N,n} e^{(N \mu - E_{N,n})/T}$ -- \textbf{большая статистическая сумма}. При чём суммирование происходит по $N \in [0, \infty]$ и по $n$ пробегающем все квантовые состояния при заданном числе частиц $N$.
+
+Так оказывается, что
+\begin{equation*}
+	\Omega = - T \ln \mathcal{Z}.
+\end{equation*}
+И в книжке мы можем найти убедительные доводы, а здесь я только напишу определение большого омега потенциала
+\begin{equation*}
+	\Omega(T,V,\mu) = F - \mu N.
+\end{equation*}
+Теперь можно вспомнить, что $F(T,V,N)$ следовательно
+\begin{equation*}
+	dF = - S d T - P d V + \mu d N
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	d \Omega = d F - d(\mu N) = - S d T - P d V - N d \mu.
+\end{equation*}
+Отсюда видно, что большой омега потенциал есть функция $\Omega(T,V,\mu)$, при чем $N = - \left(\frac{\partial \Omega}{\partial \mu}\right)_{T,V}$ -- термодинамическое число частиц. То есть $N_{\text{TD}} = \left\langle N_\text{факт}\right\rangle$.
+
+Теперь научимся всем этим пользоваться\footnote{Не будем в дальнейшем путать все наши выкладки с обычной статсуммой $Z = \sum_n e^{-E_n/T}$. Тут $N$ фиксировано.}.
+
+\textbf{Во-первых},  найдём $\langle N\rangle$ в системе (сама по себе она флуктуирующая величина).
+\begin{equation*}
+\begin{aligned}
+	\langle N\rangle &= \sum_{N=0}^\infty \sum_n N W_{N,n} = \sum_{N,n} N \frac{1}{\mathcal{Z}} e^{\frac{N \mu - E_{N,n}}{T}} 
+	= \sum_{N,n} \frac{1}{\mathcal{Z}} T \frac{\partial}{\partial \mu} e^{\frac{N \mu - E_{N,n}}{T}}
+	=  \frac{1}{\mathcal{Z}} T \frac{\partial}{\partial \mu} \underbrace{\sum_{N,n}  e^{\frac{N \mu - E_{N,n}}{T}}}_\mathcal{Z}\\
+	&= T \frac{1}{\mathcal{Z}} \frac{\partial}{\partial \mu} \mathcal{Z} = T \frac{\partial}{\partial \mu}\ln \mathcal{Z} = - \frac{\partial}{\partial\mu} \left(- T \ln \mathcal{Z}\right) = -\frac{\partial \Omega}{\partial\mu} = N_\text{TD}.
+\end{aligned}
+\end{equation*}
+Мы обещали, что так будет? Получили!
+Ещё наблюдая за всем этим действием мы замечаем, что операция $T \frac{\partial}{\partial\mu}$ -- очень полезная.
+
+\textbf{Во-вторых}, давайте применим эту полезную операцию к тому же ещё раз!
+\begin{equation*}
+\begin{aligned}
+	T \frac{\partial}{\partial\mu} \langle N\rangle
+	&=
+	T \frac{\partial}{\partial\mu} \sum_{N,n} \frac{N}{\mathcal{Z}} e^{\frac{N \mu - E_{N,n}}{T}}
+	=
+	T \sum_{N,n} \left(-\frac{N}{\mathcal{Z}^2}\right) \frac{\partial \mathcal{Z}}{\partial \mu} e^{\frac{N \mu - E_{N,n}}{T}} + T \sum_{N,n} N \frac{1}{\mathcal{Z}} \frac{N}{T} e^{\frac{N \mu - E_{N,n}}{T}}\\
+	&=
+	- T \frac{1}{\mathcal{Z}} \frac{\partial \mathcal{Z}}{\partial \mu} \sum_{N,n} N \frac{1}{\mathcal{Z}} e^{\frac{N \mu - E_{N,n}}{T}} + \sum_{N,n} \frac{N^2}{\mathcal{Z}} e^{\frac{N \mu - E_{N,n}}{T}}
+	=
+	-\underbrace{T \frac{\partial}{\partial\mu} \ln \mathcal{Z}}_{\langle N\rangle} \langle N\rangle + \langle N^2\rangle 
+	= 
+	- \langle N\rangle^2 + \langle N^2\rangle = \langle \Delta N^2\rangle.
+\end{aligned}
+\end{equation*}
+Получили флуктуацию числа частиц.
+А именно результат, что в большом каноническом ансамбле
+\begin{equation*}
+	\langle \Delta N^2\rangle = T \frac{\partial N_\text{TD}}{\partial \mu}.
+\end{equation*}
+
+Теперь остался вопрос в том, как же вычисляется $\mathcal{Z}$. Рассмотрим это на примерах.
+
+\subsubsection*{Квантовый идеальный ферми-газ}
+Пусть у нас есть газ из невзаимодействующих частиц, с уровнями энергии $\{\varepsilon_{k1}, \varepsilon_{k2}, \varepsilon_{k3}\ldots\}$. При чём на одном уровне может сидеть только по одному фермиону.
+Тогда макро-состояния будут характеризоваться набором $n = (\vc{k}_1, \vc{k}_2, \vc{k}_3, \ldots, \vc{k}_N)$. Энергия каждого микро-состояния\footnote{понятно, что у свободных частиц функции состояния $\ket{\psi_{\smallvc{k},\sigma}} = \frac{1}{\sqrt{V}} e^{i \smallvc{k} \smallvc{r}}\chi_\sigma$.} это $\varepsilon_k = \frac{\hbar^2 k^2}{2 m}$.
+
+А теперь, собственно, смотрим, как вычисляется большая статсумма
+\begin{equation*}
+	\mathcal{Z} = \sum_{N,n} e^{\frac{N \mu - E_{N,n}}{T}}
+	=
+	1 + \left(e^{\frac{\mu - \varepsilon_1}{T}} + e^{\frac{\mu - \varepsilon_2}{T}} + \ldots\right) 
+	+ \left( e^{\frac{2\mu -\varepsilon_1 - \varepsilon_2}{T}} + e^{\frac{2\mu -\varepsilon_1 - \varepsilon_3}{T}} + \ldots \right) + (\ldots) + \ldots
+\end{equation*}
+где первое слагаемое соответствует тому, что посадили в систему $N = 0$ фермионов, второе --- $N= 1$, затем $N=2$ и так далее.
+
+Физики-теоретики за нас посчитали чему такая сумма равна, если подставить наши наборы $n$, а мы этого выводить не будем
+\begin{equation*}
+	\mathcal{Z}_{FG} = \prod_{\smallvc{k}} \left(1 
+	+ e^{\frac{\mu - \varepsilon_{k}}{T} }\right).
+\end{equation*}
+А если учитывать спин, то нужно будет ввести $l$ -- для нумерации одночастичных квантовых состояний $l(\vc{k}, \vc{\sigma})$
+\begin{equation*}
+	\mathcal{Z} = \prod_{l} \left(1 
+	+ e^{\frac{\mu - \varepsilon_{l}}{T} }\right).
+\end{equation*}
+Теперь чуть более конкретизируем пример 
+\subsubsection*{Газ в ящике}
+Пусть $\varepsilon_l = \varepsilon_{\vc{k}, \sigma}$.
+То есть 
+\begin{equation*}
+	\mathcal{Z}_{FG} = \prod_{\smallvc{k}, \sigma} \left(1 
+	+ e^{\frac{\mu - \varepsilon_{k, \sigma}}{T} }\right).
+\end{equation*}
+Отсюда
+\begin{equation*}
+	\Omega = - T \ln \mathcal{Z} = - T \sum_{\smallvc{k}, \sigma}\ln \left(1 + e^{\frac{\mu - \varepsilon_{k,\sigma}}{T}}\right).
+\end{equation*}
+Теперь нам надо перейти от суммы к интегралу, при чём хочется ещё интегрировать по энергии микро-состояния $\int d k \to \int d \varepsilon_k$. А для этого нужно поговорить про плотность состояний.
+
+\subsubsection*{Плотность состояний}
+Для какой-то величины, не зависящей от координат, от суммы к интегрированию переходим следующим образом
+\begin{equation*}
+	\sum_{\smallvc{p}} \, f_{p} = \frac{V}{(2 \pi \hbar)^3} \int d^3 p f(\vc{p}).
+\end{equation*}
+При этом 
+\begin{equation*}
+	p_\alpha = \frac{2 \pi \hbar}{L} n_\alpha,
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\Delta p = \frac{2 \pi \hbar}{L}.
+\end{equation*}
+Теперь допустим, что
+\begin{equation*}
+	\sum_{\smallvc{p}} f(\varepsilon(\vc{p})) = \int_0^{+\infty} \nu(\varepsilon) f(\varepsilon) d \varepsilon,
+\end{equation*}
+где $\nu(\varepsilon)$ --- плотность состояний.
+
+Так например в 2-D ферми-газе
+\begin{equation*}
+	\varepsilon_{\smallvc{p}} = \frac{\vc{p}^2}{2 m},
+	\hspace{1.5 cm}
+	\sum_{\smallvc{p}} \leadsto \frac{L^2}{(2 \pi \hbar)^2} \int d^2 p.
+\end{equation*}
+И теперь раз $\varepsilon(|p|)$, то перейдём в полярные координаты.
+\begin{equation*}
+	d^2 p = 2\pi p d p,
+	\hspace{1 cm}
+	\varepsilon = \frac{p^2}{2m}
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	d \varepsilon =\frac{p}{m} \d p
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	m \d \varepsilon = p \d p.
+\end{equation*}
+Ну и вооружившись приобретенными знаниями
+\begin{equation*}
+	\sum_{\smallvc{p}}  f(\varepsilon(\vc{p})) 
+	=  \frac{L^2}{(2 \pi \hbar)^2} \int 2\pi p  \d p \, f(\varepsilon(p)) = \frac{L^2}{(2 \pi \hbar)^2} 2 \pi m \int_0^{+\infty} \d\varepsilon \, f(\varepsilon)
+	=
+	\int_0^{+\infty} \nu(\varepsilon) f(\varepsilon) \d \varepsilon
+\end{equation*}
+Таким образом выражаем
+\begin{equation*}
+	\nu(\varepsilon) = \frac{2 \pi m L^2}{(2 \pi \hbar)^2},
+\end{equation*}
+важно что, в для двухмерного газа получилось, что $\nu_{\text{\tiny{2D}}}(\varepsilon) \sim \const$.
+И ещё раз подчеркнём наш вывод с заменой суммы интегрированием
+\begin{equation*}
+	\sum_{\smallvc{p}} f (\varepsilon_p) 
+	=
+	\int \nu_{\text{\tiny{2D}}}(\varepsilon) f(\varepsilon) \d \varepsilon
+	=
+	\frac{2 \pi m L^2}{(2 \pi \hbar)^2} \int_0^{+\infty} f(\varepsilon) \d\varepsilon,
+\end{equation*}
+если теперь ещё добавим и спин\footnote{в трехмерии $\nu_\text{3D} \sim \sqrt{\varepsilon}$, но это мы пока показывать не будем.}, то
+\begin{equation*}
+	\nu_{\text{\tiny{2D}}} = \frac{g 2\pi m L^2}{(2 \pi \hbar)^2},
+\end{equation*}
+где $g = 2 s + 1$.
+
+И так, мы остановились на выражении для большого омега потенциала:
+\begin{equation*}
+	\Omega = - T \sum_{\smallvc{k}, \sigma} \ln \left(1 + e^{\frac{\mu - \varepsilon_p}{T}}\right).
+\end{equation*}
+Пусть мы работаем с 2D ферми-газом (не зря же мы там выше для него плотность выводили) без внешнего магнитного поля.
+Поэтому
+\begin{equation*}
+	\Omega = - T \int_0^{+\infty} \nu_\text{\tiny{2D}} \ln \left(1 + e^{\frac{\mu - \varepsilon_p}{T}}\right) \d \varepsilon = - T \left[ \varepsilon \ln \left(1 + e^{\frac{\mu - \varepsilon_p}{T}}\right) \bigg|_0^{+\infty} + \frac{1}{T} \int_0^{+\infty} \frac{\varepsilon \d \varepsilon}{1 + (\varepsilon - \mu)/T}\right]
+\end{equation*}
+Итого
+\begin{equation*}
+	\Omega = - \int_0^{+\infty} = - \frac{\varepsilon \d \varepsilon \nu_\text{\tiny{2D}}}{1 + e^{(\varepsilon - \mu)/T}} = - E,
+\end{equation*}
+где
+\begin{equation*}
+	E = \sum_{\smallvc{p}, \sigma} \varepsilon_p \langle n | \varepsilon_p\rangle = \int_0^{+\infty} \nu_\text{\tiny{2D}} \frac{\varepsilon \d \varepsilon}{1 + e^{(\varepsilon - \mu)/T}}.
+\end{equation*}
