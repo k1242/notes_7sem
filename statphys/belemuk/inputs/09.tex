@@ -1,0 +1,215 @@
+\subsection*{3D ферми-газ}
+\textbf{Во-первых}, нужно поработать с химпотенциалом $\mu(T,V,N)$.
+Стартуем с числа всех частиц в системе
+\begin{equation*}
+	N = \sum_{\smallvc{p}, \sigma}  \langle n | \varepsilon_{p, \sigma}\rangle = \frac{V}{(2 \pi \hbar)^3} \int d^3 p \langle n (\varepsilon_{p, \sigma})\rangle.
+\end{equation*}
+Где мы перешил от суммы к интегралу: $\sum_p \leadsto \frac{V}{(2 \pi \hbar)^3} \int d^3 p$. В отсутствии магнитного поля энергия не зависит от спина частиц. $\sum_{\sigma = \pm 1/2} = 2 = g$. Итого
+\begin{equation*}
+	N = \frac{g V}{(2 \pi \hbar)^3} \int 4 \pi p^2 \d p \, \langle n (\varepsilon_p)\rangle.
+\end{equation*}
+Теперь выведем плотность состояний в 3D. Знаем, что $\varepsilon = p^2/2m$, а значит $d \varepsilon = p/m \d p$, тогда
+\begin{equation*}
+	4 \pi p^2 \d p = 4 \pi m p \d \varepsilon = 4 \pi m \sqrt{2 m \varepsilon} \d \varepsilon = 2 \pi (2m)^{2/3} \sqrt{\varepsilon} \d \varepsilon.
+\end{equation*}
+Получаем
+\begin{equation*}
+	N = \underbrace{\frac{2 \pi g V (2m)^{2/3}}{(2 \pi \hbar)^3} \int \sqrt{\varepsilon}}_{\nu_\text{\tiny{3D}}} \langle n(\varepsilon)\rangle \d \varepsilon
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\nu_\text{\tiny{3D}} = A \sqrt{\varepsilon}.
+\end{equation*}
+Напомним, что $\int_0^{\varepsilon_0} \nu(\varepsilon) \d \varepsilon$ имеет смысл числа одночастичных состояний от $0$ до $\varepsilon_0$.
+
+И так, теперь подставляем статистику частиц
+\begin{equation*}
+	N = \int \nu(\varepsilon) \frac{1}{e^{(\varepsilon - \mu)/T}+1} \d \varepsilon.
+\end{equation*}
+Помним, что $\mu(T=0) = \varepsilon_\text{F}$ и если $T = 0$, то $\langle n(\varepsilon)\rangle = \left\{
+\begin{aligned}
+	1, \, \varepsilon \leq \mu\\ 0, \, \varepsilon \geq \mu
+\end{aligned}\right.
+$
+Таким образом $N = \int_0^{\mu = \varepsilon_\text{F}} \nu(\varepsilon) \d \varepsilon$ --- число фермионов в системе.
+Возьмём же теперь этот интеграл
+\begin{equation*}
+	\int_0^{\varepsilon_\text{F}} \nu(\varepsilon) \d \varepsilon
+	=
+	\int_0^{\varepsilon_\text{F}} A \sqrt{\varepsilon} \d \varepsilon
+	=
+	A \varepsilon_\text{F}^{2/3} \cdot \frac{2}{3}
+	=
+	\underbrace{A \varepsilon_\text{F}^{1/2}}_{\nu(\varepsilon_\text{F})} \cdot \frac{2}{3}\varepsilon_\text{F}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	N = \frac{2}{3}\nu(\varepsilon_\text{F}) \varepsilon_\text{F}.
+\end{equation*}
+Если $A' V = A$, то
+\begin{equation*}
+	N = \frac{2}{3} A' V \sqrt{\varepsilon_\text{F}} \varepsilon_\text{F}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\frac{N}{V} = \frac{2}{3} A' \varepsilon_\text{F}
+\end{equation*}
+Короче, $\varepsilon_\text{F} \sim n^{2/3}$, а точнее $\varepsilon_\text{F} = \frac{\hbar^2}{2 m}\left(\frac{6\pi^2}{g}\right)^{2/3} n^{2/3}$.
+
+Теперь если посмотрим на температуру $T\neq 0$ и $T \gg \varepsilon_{\text{F}}$, то получим как в классическом газе
+\begin{equation*}
+	\mu(T) = - T \ln\left(\frac{V g}{N} \frac{1}{V_Q}\right),
+\end{equation*}
+где $V_Q = \lambda_T^3$ и ещё
+\begin{equation*}
+	N = e^{\mu/T} A \int_0^{+\infty} \sqrt{\varepsilon} e^{-\varepsilon/T} \d \varepsilon.
+\end{equation*}
+
+Пусть теперь $T > 0$, но $T \ll \varepsilon_\text{F}$. Введём обозначения $\frac{\varepsilon}{T} = x$, $\frac{\mu}{T} = y$ и $y \gg 1$, получаем
+\begin{equation*}
+	N = A T^{3/2} \int \frac{x^{1/2} \d x}{e^{x-y} + 1}.
+\end{equation*}
+Сделаем утверждение, что 
+\begin{equation*}
+	J = \int_0^{+\infty} \frac{ f(x) \d x}{e^{x - y} + 1} \approx \int_0^y f(x) \d x + \frac{\pi^2}{6} f'(y) + \ldots
+\end{equation*}
+Покажем это при $y \gg 1$
+\begin{equation*}
+	J = \int_0^y f(x) \d x + \int_0^y f(x) \frac{-1}{1 + e^{y - x}} \d x + \int_y^{+\infty} \frac{f(x) \d x}{e^{x-y} +1}
+\end{equation*}
+Заменяем  в первом интеграле $y - x = z$ и $d x = d z$, а во втором наоборот $x-y = z$, тогда  второй и третий интеграл равны
+\begin{equation*}
+	\int_0^y f(x) \frac{-1}{1 + e^{y - x}} \d x + \int_y^{+\infty} \frac{f(x) \d x}{e^{x-y} +1} = 
+	\int_0^y f(y-z) \frac{- \d z}{1 + e^{z}} + \int_0^{+\infty} \frac{f(x+y) \d z}{e^{z} + 1}
+	=
+	\int_0^{+\infty} [f(y+z) - f(y-z)] \frac{\d z}{1 + e^{z}}
+	.
+\end{equation*}
+Тут первый интеграл набирается преимущественно при $z \geq 1$.
+Ну а дальше разложим вокруг точки $y$ в ряд тейлора $f(y\pm z) \approx f(y) \pm z f'(y)$ получаем
+\begin{equation*}
+	 = \int_0^{+\infty} 2 z f'(z) \frac{\d z}{e^z + 1} = 2 f'(y) \int_0^{+\infty} \frac{z \d z}{1 + e^{z}} = 2 f'(y) \frac{\pi^2}{12}.
+\end{equation*}
+Итого получаем формулу Зоммерфельда:
+\begin{equation*}
+	J = \int_0^y f(x) \d x + \frac{\pi^2}{6} f'(y).
+\end{equation*}
+Короче доказали, пользуемся, молодцы.
+\begin{equation*}
+\begin{aligned}
+	N 
+	&= A T^{3/2} \left[\int_0^y x^{1/2} \d x + \frac{\pi^2}{6} \left(\frac{d}{d x} \sqrt{x}\right)\bigg|_{x = y}\right]
+	= A T^{3/2} \left[\frac{2}{3 y^{3/2}} + \frac{\pi^2}{6} \frac{1}{2} \frac{1}{\sqrt{y}}\right]
+	= A T^{3/2} \frac{2}{3} y^{3/2} \left[1 + \frac{\pi^2}{8} \frac{1}{y^2}\right]\\
+	&=  A T^{3/2} \frac{2}{3} \left(\frac{\mu}{T}\right)^{3/2} \left[1 + \frac{\pi^2}{2} \left(\frac{T}{\mu}\right)^2 + \ldots\right]
+\end{aligned}
+\end{equation*}
+$\mu \approx \varepsilon_\text{F}$  ну или около того, можем так и подставить на первом шаге
+\begin{equation*}
+	N = \underbrace{A \frac{2}{3} \varepsilon_\text{F}^{2/3}}_{A \sqrt{\varepsilon_\text{F}} \frac{2}{3} \varepsilon_\text{F} = \nu(\varepsilon_\text{F}) \frac{2}{3} \varepsilon_\text{F} = N_0} \left(\frac{\mu}{\varepsilon_\text{F}}\right)^{3/2} \left[1 + \frac{\pi^2}{8} \left(\frac{T}{\varepsilon)\text{F}}\right)^2\right].
+\end{equation*}
+Теперь фиксируем $N$ так, что она и при $T= 0$ есть $N$
+\begin{equation*}
+	\cancel{N} = \cancel{N} \left(\frac{\mu}{\varepsilon_\text{F}}\right)^{3/2} \left[1 + \frac{\pi^2}{8} \left(\frac{T}{\varepsilon_\text{F}}\right)^2\right].
+\end{equation*}
+И далее $N(T,V, \mu)$  и $\mu(T,V,N)$, раз $N$ мы сократили, то ищем $\mu = \mu(T,n)$ решение уравнение в виде
+\begin{equation*}
+	\mu =\varepsilon_\text{F} \left(1 + C_1 \left(\frac{T}{\varepsilon_\text{F}}\right)^2 + \ldots\right).
+\end{equation*}
+Сокращаем $N$-ки и получаем
+\begin{equation*}
+	1 = \left(1 + C_1 \left(\frac{T}{\varepsilon_\text{F}}\right)^{2}\right)^{3/2} \left[1 + \frac{\pi^2}{8} \left(\frac{T}{\varepsilon_\text{F}}\right)^2\right]
+	\hspace{1 cm}
+	\leadsto
+	\hspace{1 cm}
+	1 = 1 + \underbrace{(\ldots)}_{0} \left(\frac{T}{\varepsilon_\text{F}}\right)^2 + O \left(\left(\frac{T}{\varepsilon_\text{F}}\right)^4 \right).
+\end{equation*}
+Получаем константу $C_1$
+\begin{equation*}
+	\frac{3}{2} C_1 + \frac{\pi^2}{8} = 0
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	C_1 = -\frac{\pi^2}{12}.
+\end{equation*}
+Итого
+\begin{equation*}
+	\mu(T) = \varepsilon_\text{F} \left(1 - \frac{\pi^2}{12} \left(\frac{T}{\varepsilon_\text{F}}\right)^2 + \ldots\right).
+\end{equation*}
+Напомним, что
+\begin{equation*}
+	\mu_\text{класс} = -T \ln\left(\frac{g V}{N} \frac{1}{V_q}\right).
+\end{equation*}
+
+\subsection*{Парамагнетизм Паули}
+Пусть теперь у нас есть ящик газа, к которому мы прикладываем магнитное поле, выберем ось $z$ сонаправлено полю.
+И так, к нашим прошлым рассуждениям нужно теперь добавить зависимость энергии ещё и от спина $\varepsilon_{\smallvc{p}, \sigma}$. Тогда магнитный момент частицы
+\begin{equation*}
+	\vc{\mu} = \gamma \hbar \vc{s} = \frac{e \hbar}{m c} \vc{s} = - \frac{|e| \hbar}{2 m c} \underbrace{2 \vc{s}}_{\vc{\sigma}}.
+\end{equation*}
+И по оси магнитный момент тогда будет
+\begin{equation*}
+	\mu^z = - \mu_\text{Б} \sigma,
+	\hspace{1 cm}
+	\sigma = \pm 1.
+\end{equation*}
+Добавка к энергии же при взаимодействии магнитного момента с полем
+\begin{equation*}
+	\Delta \varepsilon = - \vc{\mu} \vc{\mathcal{H}} = + \mu_\text{Б} \mathcal{H} \sigma.
+\end{equation*}
+Такая добавка к энергии в зависимости от $\sigma$ даёт два варианта развития событий:
+\begin{equation*}
+	\varepsilon_{\smallvc{p}, \sigma} = \varepsilon_{\smallvc{p}} + \mu_\text{Б} \mathcal{H} \sigma
+	\hspace{1 cm}
+	\leadsto
+	\hspace{1 cm}
+	\varepsilon_{\smallvc{p}}^{\pm} = \varepsilon_{\smallvc{p}} \pm \mu_\text{Б} \mathcal{H}.
+\end{equation*}
+Таким образом получим поправки в статистику (красным пунктиром изображено нулевое магнитное поле)
+\begin{equation*}
+	\left\langle n(\varepsilon_p^\pm)\right\rangle = \frac{1}{e^{\frac{\varepsilon_p \pm \mu_\text{Б} \mathcal{H} - \mu}{T}} + 1}.
+\end{equation*}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/sem9im2.pdf}
+    %\caption{}
+    %\label{fig:}
+\end{figure}
+Видим разницу в $N^{(+)} \neq N^{(-)}$ осталось только посчитать
+\begin{equation*}
+	N^{\pm} = \sum_{\smallvc{p}} \left\langle n (\varepsilon_p^{\pm})\right\rangle
+	=
+	\int \nu(\varepsilon) \frac{1}{e^{\frac{\varepsilon_p \pm \mu_\text{Б} \mathcal{H} - \mu}{T}} + 1} \d \varepsilon.
+\end{equation*}
+Здесь указана именно $\nu(\varepsilon)$ на один спин без учета $g = 2$.
+
+Теперь делаем замену, чтобы прийти к уже знакомому нам интегралу $\frac{\varepsilon}{T} = x$, $\frac{\mu \pm \mu_\text{Б} \mathcal{H}}{T} = y$, тогда
+\begin{equation*}
+	N^{(\pm)} = A T^{3/2} \int_{0}^{+\infty} \frac{x^{1/2} \d x}{e^{x-y} + 1} = A T^{3/2} \int_{0}^{y} x^{1/2} \d x = A T^{3/2 } \frac{2}{3} y^{3/2}.
+\end{equation*}
+Заменяем назад
+\begin{equation*}
+	N^{(\pm)} = A T^{3/2} \frac{2}{3} \left(\frac{\mu \mp \mu_\text{Б} \mathcal{H}}{T}\right)^{3/2}
+	= \frac{2}{3} A \mu^{3/2} \left(1 \mp \frac{\mu_\text{Б} \mathcal{H}}{\mu}\right)^{3/2}.
+\end{equation*}
+Пусть поля слабые и температура почти ноль, тогда $\mu \approx \varepsilon_\text{F}$, и в таких предположениях
+\begin{equation*}
+	N^{(\pm)} = \underbrace{\frac{2}{3} A \varepsilon_\text{F}^{3/2}}_{N/2} \left(1 \mp \frac{3}{2} \frac{\mu_\text{Б} \mathcal{H}}{\varepsilon_\text{F}}\right) = \frac{N}{2} \left(1 \mp \frac{3}{2} \frac{\mu_\text{Б} \mathcal{H}}{\varepsilon_\text{F}}\right).
+\end{equation*}
+Теперь осталось напомнить, что намагниченность это
+\begin{equation*}
+	M^z = \mu_\text{Б} \left( N^(-) - N^{(+)}\right) = \mu_\text{Б} N \frac{3}{2} \frac{\mu_\text{Б} \mathcal{H}}{\varepsilon_\text{F}} = \mu_\text{Б}^2 \nu^{\varepsilon_\text{F}} \mathcal{H},
+\end{equation*}
+так как $\frac{N}{\varepsilon_\text{F}} \frac{3}{2} = \nu(\varepsilon_\text{F})$. То есть мы получили
+\begin{equation*}
+	M^z = \mu_\text{Б}^2 \nu(\varepsilon_\text{F}) \mathcal{H}.
+\end{equation*}
+Теперь отсюда надо углядеть коэффициент пропорциональности $M^z \sim \mathcal{H}$, а именно
+\begin{equation*}
+	M^z = \chi \mathcal{H}
+	\hspace{1 cm}
+	\leadsto
+	\hspace{1 cm}
+	\chi = \mu_\text{Б}^2 \nu(\varepsilon_\text{F}),
+\end{equation*}
+что носит название \textbf{восприимчивость Паули}.
