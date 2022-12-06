@@ -1,0 +1,52 @@
+\textbf{Т18}. Исходя из того, что сумма по столбцам должна быть единичной, можем составить матрицу
+\begin{equation*}
+	\Pi = \begin{pmatrix}
+	    0.4 & 0.3 & 0.3 \\
+	    0.5 & 0.6 & 0.5 \\
+	    0.1 & 0.1 & 0.2 \\
+	\end{pmatrix},
+	\hspace{10 mm} 
+	\vc{p} = \begin{pmatrix}
+		0.2 \\ 0.3 \\ 0.5
+	\end{pmatrix},
+\end{equation*}
+тогда $\Pi \vc{p} = \left(0.32,\, 0.53,\, 0.15\right)$. Стационарное состояение можем найти через собственный вектор
+\begin{equation*}
+	\Pi \vc{q} = \vc{q},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	\vc{q} = \frac{1}{9}\left(3,\, 5,\, 1\right).
+\end{equation*}
+
+
+\textbf{Т19}. Для двухуровенвой системы с матрицей перехода
+\begin{equation*}
+	\Pi = \begin{pmatrix}
+	    1-\alpha & \alpha  \\
+	    \beta & 1-\beta  \\
+	\end{pmatrix},
+\end{equation*}
+найдём собственные векторы и перейдём в их базис
+\begin{equation*}
+	\vc{q} \Pi = \vc{q},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}	
+	\vc{q}_1 = \left(1/2,\, 1/2\right), \ \ \lambda_1 = 1
+	\hspace{5 mm} 
+	\vc{q}_2 = \left(\alpha,\, -\beta\right), \ \ \lambda_2 = 1- \alpha -\beta.
+\end{equation*}
+Тогда можем найти степень матрицы
+\begin{equation*}
+	\Pi = S \begin{pmatrix}
+	    \lambda_1 & 0  \\
+	    0 & \lambda_2  \\
+	\end{pmatrix} S^{-1},
+	\hspace{5 mm} 
+	\Pi^n = S \begin{pmatrix}
+	    \lambda_1^n & 0  \\
+	    0 & \lambda_2^n  \\
+	\end{pmatrix} S^{-1} = 
+	\frac{1}{\alpha+\beta} \begin{pmatrix}
+	    \alpha \lambda_2^n + \beta & \alpha (1-\lambda_2^n)  \\
+	    \beta(1-\lambda_2^n) & \alpha + \beta \lambda_2^n  \\
+	\end{pmatrix},
+\end{equation*}
+и соответственно предельное распределение $\left(1/2,\, 1/2\right)$.
