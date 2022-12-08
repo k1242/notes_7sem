@@ -1,0 +1,113 @@
+\subsection*{Квантовый эффект Холла}
+
+
+\textbf{Эффект Холла}. 
+Вспоминим уравнение Друде
+\begin{equation*}
+	m \left( \cancel{\frac{d \vc{v}}{d t}}  + \frac{1}{\tau} \vc{v}\right) = e \vc{E} + \frac{e}{c} \vc{v} \times  \vc{B},
+\end{equation*}
+где рассматриваем 2D образец, смотрим стационарное решение. Расписывая покомпоненто, можем найти
+\begin{equation*}
+	\begin{pmatrix}
+	    1 & -\frac{e B \tau}{mc}  \\
+	    \frac{e B \tau}{mc} & 1  \\
+	\end{pmatrix} \begin{pmatrix}
+		v_x \\ v_y
+	\end{pmatrix} = \frac{e \tau}{m} \begin{pmatrix}
+		E_x \\ E_y
+	\end{pmatrix}.
+\end{equation*}
+Подставим $\vc{J} = n e \vc{v}$, тогда
+\begin{equation*}
+	\begin{pmatrix}
+	    1 & -\frac{e B \tau}{mc}  \\
+	    \frac{e B \tau}{mc} & 1  \\
+	\end{pmatrix} 
+	\begin{pmatrix}
+		J_x \\ J_y
+	\end{pmatrix} = \frac{n e^2 \tau}{m} 
+	\begin{pmatrix}
+		E_x \\ E_y
+	\end{pmatrix}.
+\end{equation*}
+Получаем соотношение $\vc{J} = \hat{\sigma} \vc{E}$, тогда $\vc{E} = \hat{\sigma}^{-1} J = \hat{\rho} \vc{J}$. Матрица $\hat{\rho}$ получается равной 
+\begin{equation*}
+	\hat{\rho} = \frac{m}{n e^2 \tau} \begin{pmatrix}
+	    1 & -\frac{e B \tau}{mc}  \\
+	    \frac{e B \tau}{mc} & 1  \\
+	\end{pmatrix}.
+\end{equation*}
+Итого находим
+\begin{equation*}
+	\rho_{xx} = \frac{m}{n e^2 \tau},
+	\hspace{10 mm} 
+	\rho_{xy} = \frac{B}{n |e| c}.
+\end{equation*}
+
+
+
+
+\begin{wrapfigure}{r}{0.2\textwidth}
+  \begin{center}
+        \vspace{-7 mm}
+        \includegraphics[width=0.9\linewidth]{figures/Ресурс 2.pdf}
+  \end{center}
+  \vspace{-5mm}
+    \caption{Уровни Ландау}
+    %\label{fig:}
+\end{wrapfigure}
+
+
+
+\textbf{Квантовый эффект Холла}. Характерная длина основного состояния
+\begin{equation*}
+	\lambda_B = \sqrt{\frac{\hbar}{m \omega_B}},
+	\hspace{10 mm} 
+	\omega_B = \frac{e B}{mc}.
+\end{equation*}
+Подставляя $\omega_B$, находим
+\begin{equation*}
+	\lambda_B = \sqrt{\frac{\hbar c}{e B}},
+\end{equation*}
+где $[\hbar c/e]$ -- квант потока $B$. 
+
+
+
+Далее рассматриваем образцы такие, чтобы их характерный размер $L \gg \lambda_B$. Уровни Ландау загибаются к краям образца. Далеко от границ все электронные состояния являются локализованными и не участвуют в процессах электропередачи. Неупругие процессы отсутсвуют в сиду заполненности сферы Ферми. 
+
+
+
+
+По каналам проводимости вдоль границ будет одномерный проводник с квантущимся conductance $G$:
+\begin{equation*}
+	G = \frac{e^2}{h},
+	\hspace{10 mm} 
+	\sigma_{xy} = \frac{e^2}{h} \nu,
+\end{equation*}
+где $\nu$ -- количество заполненных уровней Ландау. Для $\sigma_{xx} = 0$ в силу локализованности электронов. Тогда для сопротивления $\hat{\sigma} = \hat{\rho}^{-1}$, получаем
+\begin{equation*}
+	\sigma_{xx} = \frac{\rho_{xx}}{\rho_{xx}^2 + \rho_{xy}^2},
+	\hspace{5 mm} 
+	\sigma_{xy} = \frac{-\rho_{xy}}{\rho_{xx}^2 + \rho_{xy}^2}.
+\end{equation*}
+Если $\sigma_{xx} = 0$, тогда $\rho_{xx} = 0$ и $\rho_{xy} = 1/\sigma_{xy}$:
+\begin{equation*}
+	\rho_{xy} = \frac{h}{e^2} \frac{1}{\nu}.
+\end{equation*}
+
+
+
+Емкость уровней Ландау 
+\begin{equation*}
+	N_{LL} = \frac{\Phi}{\Phi_0} = \frac{S}{2 \pi \lambda_B^2},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	\nu = \frac{N}{N_{LL}} = \frac{N \lambda_B^2 2\pi}{S} = 2 \pi n \lambda_B^2 = 2 \pi n \frac{\hbar c}{e B},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	\frac{1}{\nu} \sim B.
+\end{equation*}
+Идеальности будет мешать эффект туннелирования, но они подавлены как $e^{-L/\lambda_B}$.
+
+
+
+
+

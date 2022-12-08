@@ -1,0 +1,128 @@
+% Макроскопические квантовые явления
+% Введение в сверхтекучесть. Критерий сверхтекучести Ландау. Бозе-эйнштейновская конденсация в идеальном бозе-газе. Теория сверхтекучести Боголюбова для слабо-неидеального газа.
+
+\subsection*{Критерий сверхтекучести Ландау}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection*{Идеальный бозе-газ}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+
+\subsection*{Неидеальный Бозе-газ}
+
+Рассмотрии гамильтониан
+\begin{equation*}
+	H = \sum_p \frac{p^2}{2m} a_p\con a_p + \frac{g}{2V} \sum a_{p_1'}\con a_{p_2'}\con a_{p_2} a_{p_1},
+\end{equation*}
+где $\sum \sub{p}{in} = \sum \sub{p}{out}$. 
+
+Основной вклад идёт от нулевых импульсов:
+\begin{equation*}
+	 \frac{g}{2V} \sum a_{p_1'}\con a_{p_2'}\con a_{p_2} a_{p_1} \approx \frac{g}{2V} a_0\con a_0\con a_0 a_0 + \frac{g}{2V} \sum_p \left(
+		a_0\con a_0\con a_p a_{-p} + a\con_{p} a_{-p}\con a_0 a_0 + 4 a_0\con a_0 a_p\con a_p
+	\right),
+\end{equation*}
+где первое слагаемое пропорционально
+\begin{equation*}
+	N_0^2 = (N - \sum_p a_p\con a_p)^2 = N - 2 N \sum_p a_p\con a_p.
+\end{equation*}
+Итого находим\footnote{
+	Вообще около $a_0\con$ могла быть фаза, но от неё каноническим преобразованием можем избавиться.
+} , что
+\begin{equation*}
+	H = \frac{g N^2}{2V} + \sum_p \left[
+		\left(\frac{p^2}{2m} + \frac{2 g N}{2V}\right) a_p\con a_p + 
+		\frac{g N}{2V} \left(
+			a_p\con a_{-p}\con + a_p a_{-p}
+		\right)
+	\right],
+\end{equation*}
+таким образом приходим к квадратичному гамильтониану. 
+
+
+Сделаем каноническое преобразование Боголюбова
+\begin{equation*}
+	\left\{\begin{aligned}
+	    a_p &= u_p b_p + v_p b\con_{-p} \\
+	    a_p\con &= u_p b_p\con + v_p b_{-p}\con
+	\end{aligned}\right.
+	\hspace{10 mm} 
+	[b_p,\, b_{p'}\con] = \delta_{pp'},
+	\hspace{5 mm} 
+	[b_p,\, b_{p'}] = 0.
+\end{equation*}
+Так приходим к ограничениям вида 
+\begin{equation*}
+	u_p^2 - v_p^2 = 1,
+	\hspace{10 mm} 
+	v_{p} = v_{-p}, 
+	\hspace{10 mm} 
+	u_{p} = u_{-p},
+\end{equation*}
+более того можем выбрать коэффициенты вещественными.  
+
+Из диагонализации, с учетом требований, получаем выражение для $u_p$ и $v_p$:
+\begin{equation*}
+	u_p = \frac{1}{2}\left(
+		\sqrt{\frac{\varepsilon(p)}{E_p}} + \sqrt{\frac{E_p}{\varepsilon(p)}}
+	\right),
+	\hspace{10 mm} 
+	u_p = \frac{1}{2}\left(
+		\sqrt{\frac{\varepsilon(p)}{E_p}} - \sqrt{\frac{E_p}{\varepsilon(p)}}
+	\right),
+\end{equation*}
+где энергия $\varepsilon(p)$ имеет вид
+\begin{equation*}
+	\varepsilon(p) = \sqrt{s^2 p^2 + \left(\frac{p^2}{2m}\right)^2},
+	\hspace{10 mm} 
+	s = \sqrt{\frac{g n }{m}}.
+\end{equation*}
+Таким образом гамильтониан приводится к виду
+\begin{equation*}
+	H = H_0 + \sum_{p \neq 0} \varepsilon(p) b_p\con b_p.
+\end{equation*}
+Таким образом боголюбоны соответсвуют идеальному бозе-газу возмущений. 
+
+% \begin{equation*}
+% 	\langle b_p\con b_p \rangle = \frac{1}{e^{\varepsilon(p)/T}-1}.
+% \end{equation*}
+
+По критерию Ландау сразу находим
+\begin{equation*}
+	\sub{v}{кр} = \min_p \frac{\varepsilon(p)}{p} = s.
+\end{equation*}
+
+
+Найдём количество надконденсатных частиц
+\begin{equation*}
+	N_{p\neq 0} = \sum_{p\neq 0} \langle a_p\con a_p\rangle = \sum_{p\neq 0} \left(
+		u_p^2 \langle b_p\con b_p\rangle + v_p^2 (1-\langle b_p\con b_p\rangle)
+	\right) \overset{T=0}{=}  \sum_p v_p^2 \sim V \cdot (ms)^3.
+\end{equation*}
+Длину рассеяния $a$ можем вычислить для $s$-рассеяния
+\begin{equation*}
+	a = \frac{gm}{4 \pi}.
+\end{equation*}
+Подставляя $a$ в выражение для $N_>$, находим
+\begin{equation*}
+	N_{p\neq 0} \sim N \cdot \sqrt{n a^3},
+	\hspace{10 mm} 
+	\frac{N_{p\neq 0}}{N} \sim \sqrt{n a^3},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	N \approx N_0 (1 + \ldots \sqrt{n a^3}).
+\end{equation*}
+Для введение парных столкновений требуем, чтобы $n a^3 \ll 1$. 
