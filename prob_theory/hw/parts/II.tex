@@ -1,17 +1,44 @@
-\textbf{Т17}. \red{\xmark}
+\textbf{Т17}. Вероятность встретить $5$ равна $P_5 = 1/9$, $P_7 = 1/6$, соответственно $P_0 = 1-P_5-P_7 = 13/18$. Тогда искомая вероятность
+\begin{equation*}
+	P = P_1 + P_0 (P_1 + P_0 (P_1+\ldots)) = \frac{P_5}{1-P_0} = \frac{1/9}{1-13/18} = \frac{2}{5}.
+\end{equation*}
 
 
-\textbf{Т18}. \red{\xmark}
+\textbf{Т18}. Аналогично предыдущей задачи находим
+\begin{align*}
+	P_1 &= \frac{1}{2} + \frac{1}{2^2} + \ldots + \frac{1}{2^{3k+1}} = \frac{1/2}{1-1/8} = 4/7\\
+	P_2 &= \frac{1}{2^2} + \frac{1}{2^5} + \ldots = \frac{1/4}{1-1/8} = \frac{2}{7}\\
+	P_3 &= 1 - \frac{4}{7} - \frac{2}{7} = \frac{1}{7}\\
+\end{align*}
 
 
-\textbf{Т19}. \red{\xmark}
-
-
-\textbf{Т20}. \red{\xmark}
 
 
 
-\textbf{Т21}. \red{\xmark}
+\textbf{Т19}. На первую игру могло выпасть два старых, один старый или обы новых. Тогда искомую вероятность можем найти 
+\begin{equation*}
+	P = P(\text{нн}|\text{нн})+P(\text{нн}|\text{cн})+P(\text{нн}|\text{cc}) = \frac{28}{135}.
+\end{equation*}
+где учли, что $P(\text{нн}) = \frac{6}{10} \frac{5}{9}$, $P(\text{cн}) = \frac{6}{10} \frac{4}{9} + \frac{4}{10} \frac{6}{9}$, $P(\text{cc}) = \frac{4}{10} \frac{3}{9}$.
+
+
+\textbf{Т20}. Далее считая $P_A = P_C = 0.3$, $P_B = 0.4$, $P(L) = 0.6$, $P(\bar{L}) = 0.2$. Получено $ACAB$ -- событие $S$, тогда
+\begin{equation*}
+	P(A|S) = \frac{P(A) P(S|A)}{\sum_{x=\{A, B, C\}} P(x)P(S|x)} = \frac{9}{16}.
+\end{equation*}
+
+
+
+\textbf{Т21}. Считая что В (всегда), Н (никогда), И (иногда), возможны кофигурации НВВ, НИИ, ИВВ, ...
+\begin{equation*}
+	P_1 = \frac{1}{6},
+	\hspace{5 mm} 
+	P_2 = \frac{1}{24},
+	\hspace{5 mm} 
+	P_3 = \frac{1}{12},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	P = \frac{1/6 + 1/12}{1/6 + 1/12 + 1/24} = \frac{1}{7}.
+\end{equation*}
 
 
 
@@ -31,7 +58,19 @@
 
 
 
-\textbf{Т23}. \red{\xmark}
+\textbf{Т23}. Разобьем последовательность на десятки. Вероятность, что 10 успехов $0 < p^10 \overset{\mathrm{def}}{=}  q \leq 1$. Верно, что
+\begin{equation*}
+A \subset \uplim A_n,
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	P(A) \geq P(\uplim A_n).
+\end{equation*}
+По лемме Бареля-Кантелли
+\begin{equation*}
+	\sum_{n=1}^{\infty} P(A_n) = \sum q = \infty,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}	
+	P(\uplim A_n)=1,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm} P(A) = 1.
+\end{equation*}
 
 
 

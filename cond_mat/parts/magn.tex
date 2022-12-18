@@ -1,0 +1,73 @@
+\subsection*{Гамильтониан Гейзенберга (локализованные магнитные моменты)}
+
+
+Для системы атомарных спинов в решётке ферромагнетика запишем гамильтониан Гейзенберга:
+\begin{equation*}
+	\hat{H} = - \mu_0 g \sum_i \hat{\vc{S}}_i \cdot \vc{B} - \frac{1}{2} \sum_{i \neq j} J_{ij} \hat{\vc{S}}_i \hat{\vc{S}}_j.
+\end{equation*}
+Будем считать, что $\vc{M} = \mu_0 g n \langle \vc{S}\rangle$ и отклонения спинов от среднего значения малы
+\begin{equation*}
+	\hat{\vc{S}}_i = \langle  \vc{S}\rangle + \delta \vv{S}_i, \hspace{5 mm} 
+	\delta S_i \ll \langle  S\rangle.
+\end{equation*}
+Тогда гамильтониан Гейзенберга представим в виде
+\begin{equation*}
+	\hat{H} = - \mu_0 g \sum_i \vv{S}\left(
+		\vc{B} + \frac{1}{\mu_0 g} \sum_{i \neq j} J_{ij} \langle S\rangle
+	\right),
+\end{equation*}
+где выражение в скобках и есть $\sub{\vc{B}}{eff} = \vc{B} + b \vc{M}$, где $b = z J / n \mu_0^2 g^2$.
+
+
+Теперь вспомним, что во внешнем поле $\sub{{B}}{eff}$ намагниченность двухуровневой системы определяется 
+\begin{equation*}
+	M = n \mu \mathbb{B}(\mu \sub{{B}}{eff} / T),
+\end{equation*}
+где $\mathbb{B}$ -- функция БРиллюэна с разложением $\mathbb{B}(x) = \alpha x - \beta x^3$, $\alpha = (S+1)/3S$, $\beta = \alpha (2 S^2 + 2 S + 1) / 30 S^2$. 
+
+Таким образом намагниченность является решением системы уравнений
+\begin{equation*}
+	\left\{\begin{aligned}
+	    M &= n \mu(\alpha x - \beta x^3 + \ldots), \\
+	    M &= \frac{T}{\mu b} x - \frac{B}{b},
+	\end{aligned}\right.
+\end{equation*}
+где $x = \mu \sub{{B}}{eff} / T$. В отсутствие внешнего поля $B=0$ температура Кюри будет
+\begin{equation*}
+	\Tc = \frac{1}{3} S (S+1) z J,
+\end{equation*}
+где $z$ -- количество ближайших соседей в решётке. 
+
+
+
+
+
+
+%  режим рамана нета
+% эффект капицы дирака
+
+
+\subsection*{Гамильтониан Хаббарда (делокализованные магнитные моменты)}
+
+В приближении слабой связи электроны почти свободные, гамильтониан можем записать в виде
+\begin{equation*}
+	\hat{H} = \sum_{k \sigma} \varepsilon_k \hat{c}\con_{k \sigma} \hat{c}_{k \sigma} + U_0 \sum_j \hat{n}_{j \uparrow} \hat{n}_{j \downarrow}.
+\end{equation*}
+Считая $\langle n_{\uparrow, \downarrow}\rangle = \bar{n} \pm \delta n$, находим выигрыш от поляризации в потенциальной энергии
+\begin{equation*}
+	\Delta_+ = U_0 \langle n_\uparrow \rangle \langle n_\downarrow \rangle = U_0 (\bar{n}^2 - \delta n^2).
+\end{equation*}
+Однако заполняя $\ket{\uparrow}$ состояния, мы раздуваем поверхность Ферми, проигрывая в кинетической энергии на
+\begin{equation*}
+	\Delta_- = \delta n \cdot \frac{\delta n}{D(\varepsilon_F)},
+\end{equation*}
+тогда поляризация свободных электронов будет происходить при 
+\begin{equation*}
+	U_0 D(\varepsilon_F) > 1,
+\end{equation*}
+что и составляет \textit{критерий Стонера}. 
+
+
+
+
+

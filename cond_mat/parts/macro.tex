@@ -32,19 +32,19 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 Основной вклад идёт от нулевых импульсов:
 \begin{equation*}
-	 \frac{g}{2V} \sum a_{p_1'}\con a_{p_2'}\con a_{p_2} a_{p_1} \approx \frac{g}{2V} a_0\con a_0\con a_0 a_0 + \frac{g}{2V} \sum_p \left(
+	 \frac{g}{2V} \sum a_{p_1'}\con a_{p_2'}\con a_{p_2} a_{p_1} \approx \frac{g}{2V} a_0\con a_0\con a_0 a_0 + \frac{g}{2V} \sum_{p \neq 0} \left(
 		a_0\con a_0\con a_p a_{-p} + a\con_{p} a_{-p}\con a_0 a_0 + 4 a_0\con a_0 a_p\con a_p
 	\right),
 \end{equation*}
 где первое слагаемое пропорционально
 \begin{equation*}
-	N_0^2 = (N - \sum_p a_p\con a_p)^2 = N - 2 N \sum_p a_p\con a_p.
+	N_0^2 = (N - \sum_{p \neq 0} a_p\con a_p)^2 = N^2 - 2 N \sum_{p \neq 0} a_p\con a_p.
 \end{equation*}
 Итого находим\footnote{
 	Вообще около $a_0\con$ могла быть фаза, но от неё каноническим преобразованием можем избавиться.
 } , что
 \begin{equation*}
-	H = \frac{g N^2}{2V} + \sum_p \left[
+	H = \frac{g N^2}{2V} + \sum_{p \neq 0} \left[
 		\left(\frac{p^2}{2m} + \frac{2 g N}{2V}\right) a_p\con a_p + 
 		\frac{g N}{2V} \left(
 			a_p\con a_{-p}\con + a_p a_{-p}
@@ -58,7 +58,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \begin{equation*}
 	\left\{\begin{aligned}
 	    a_p &= u_p b_p + v_p b\con_{-p} \\
-	    a_p\con &= u_p b_p\con + v_p b_{-p}\con
+	    a_p\con &= u_p b_p\con + v_p b_{-p}
 	\end{aligned}\right.
 	\hspace{10 mm} 
 	[b_p,\, b_{p'}\con] = \delta_{pp'},
@@ -81,7 +81,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		\sqrt{\frac{\varepsilon(p)}{E_p}} + \sqrt{\frac{E_p}{\varepsilon(p)}}
 	\right),
 	\hspace{10 mm} 
-	u_p = \frac{1}{2}\left(
+	v_p = \frac{1}{2}\left(
 		\sqrt{\frac{\varepsilon(p)}{E_p}} - \sqrt{\frac{E_p}{\varepsilon(p)}}
 	\right),
 \end{equation*}
@@ -89,7 +89,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \begin{equation*}
 	\varepsilon(p) = \sqrt{s^2 p^2 + \left(\frac{p^2}{2m}\right)^2},
 	\hspace{10 mm} 
-	s = \sqrt{\frac{g n }{m}}.
+	s = \sqrt{\frac{g N }{mV}}.
 \end{equation*}
 Таким образом гамильтониан приводится к виду
 \begin{equation*}
@@ -126,3 +126,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	N \approx N_0 (1 + \ldots \sqrt{n a^3}).
 \end{equation*}
 Для введение парных столкновений требуем, чтобы $n a^3 \ll 1$. 
+
+\begin{equation*}
+	\xi
+\end{equation*}
