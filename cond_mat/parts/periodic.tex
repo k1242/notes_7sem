@@ -1,0 +1,46 @@
+
+\subsection{Квазиимпульс и теорема Блоха}
+
+
+\textbf{Квазиимпульс}.
+Вспомним, что импульс -- генератор трансляций по координате $\hat{T}_{a}^x$:
+\begin{equation*}
+	\hat{T}_{a}^x \psi(x) = \exp\left({a}\, \partial_x \right) \psi(x) = \sum_{n=0}^{\infty} \frac{\psi^{(n)}(x)}{n!} a^n= \psi(x+{a}),
+	\hspace{10 mm} 
+	\hat{T}_{a}^x = \exp\left(\tfrac{i}{\hbar} {a} \hat{p} \right),
+	\hspace{5 mm} 
+	\hat{p} = - i \hbar \partial_x.
+\end{equation*}
+Верно и в обратную сторону, для импульса оператор $\hat{x}$ будет выступать генератором трансляций
+\begin{equation*}
+	\hat{T}^p_b = \exp\left(\tfrac{i}{\hbar} b \hat{x}\right),
+	\hspace{5 mm} 
+	\hat{x} = i \hbar \partial_p,
+\end{equation*}
+в импульсном представлении.
+
+
+Рассмотрим периодический потенциал $U(x) = \sum_n e^{2 \pi n x/a}$ с периодом $a$ и заметим, что каждое слагаемое -- трансляция импульса на величину $2 \pi \hbar / a$, тогда определим квазиимпульс $P$
+\begin{equation*}
+	P = p \ \text{mod} \ \frac{2 \pi \hbar}{a},
+\end{equation*}
+который будет коммутировать с $\hat{U}$, а значит и с $\hat{H}$, то есть будет первым интегралом системы.
+
+\textbf{Теорема Блоха}. Для $\hat{H} = \frac{\hat{p}^2}{2m} + U(r)$ c периодичным потенциалом $U$ собственные состояния могут быть выбраны в виде 
+\begin{equation*}
+	\psi_{n \vc{k}} = e^{i \vc{k} \vc{r}} u_{n \vc{k}}(\vc{r}),
+	\hspace{10 mm} 
+	u_{n \vc{k}} (\vc{r} + \vc{R}) = u_{n \vc{k}} (\vc{r}),
+\end{equation*}
+где $\vc{R}$ -- вектор решётки Бравэ.
+
+
+\subsection{ \greenx Зонная структура}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+

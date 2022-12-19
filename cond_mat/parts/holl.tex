@@ -1,53 +1,17 @@
-
-\subsection*{Формула Больцмана}
-
-Запишем уравнение на динамику чисел заполнения $f(k, r)$:
-\begin{equation*}
-	\partial_t f(k, r) + \vc{v} \cdot \vc{\nabla}_r f + \dot{\vc{k}} \vc{\nabla}_k f = I_{st}[f],
-\end{equation*}
-где $I_{st}[f]$ -- интеграл столкновений, $\dot{\vc{k}} = eE / \hbar$ -- внешняя сила. Считая ситуацию изотропной и стационарной, получаем \textit{уравнение Больцмана}
-\begin{equation*}
-	e \vc{E} \cdot \frac{\partial f}{\partial \vc{k}} = I_{st}[f].
-\end{equation*}
-Столкновительный интеграл можем расписать в виде
-\begin{equation*}
-	I_{st}[f] = - \sum_{k'} \left(
-		w_{k'k} f_k (1-f_{k'}) - w_{kk'} f_{k'} (1-f_k)
-	\right) = \sum w_{k k'} (f_k - f_{k'}),
-\end{equation*}
-где амплитуда рассеяния по золотому правилу Ферми с учетом упругости процесса $w_{k'k} = \frac{2 \pi}{\hbar} |V_{k' k}|^2 \delta(\varepsilon_k - \varepsilon_{k'})$. Можем угадать решение в виде
-\begin{equation*}
-	f_k = f(\varepsilon_k) + \delta f_k,
-	\hspace{5 mm} 
-	\delta f_k = - c \cdot \vc{E} \cdot \vc{v}_k \cdot f_0'(\varepsilon).
-\end{equation*}
-Подставляя, найдём 
-\begin{equation*}
-	\lambda c = - e,
-	\hspace{10 mm} 
-	\lambda = - \int \frac{\d \Omega}{4 \pi} w(\theta) (1-\cos \theta).
-\end{equation*}
-При этом связь так и поля получится в виде
-\begin{equation*}
-	\vc{J} = \frac{n e^2}{m} \tau \vc{E},
-	\hspace{5 mm} 
-	\frac{1}{\tau} = -\lambda = \int \frac{\d \Omega}{4 \pi} w(\theta) (1-\cos \theta).
-\end{equation*}
-Таким образом вклад вносят только рассеивающие на большой угол примеси. 
-
-
-
-\textbf{Критерий применимости}. Здесь приближение было в разделение координат и импульсов, то есть должно быть $\Delta k \sim \frac{1}{l} \ll k_F$, где $l \sim v_F \cdot \tau$, так получаем критерий \textit{Иоффе-Регеля}
-\begin{equation*}
-	k_F \cdot l \gg 1
-\end{equation*}
-критерий применимости Больцмановского приближения. 
+% Квантовые эффекты в проводниках
+% Ограничения полуклассического описания электронного транспорта уравнением Больцмана. Критерий Иоффе-Регеля.
+% Локализация Андерсона в сильном беспорядке.
+% Формула Ландауера для кондактанса.
+% Введение в квантовый эффект Холла.  
 
 
 
 
 
-\subsection*{Локализация Андерсона}
+
+
+
+\subsection{\greenx Локализация Андерсона}
 
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -64,7 +28,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 
-\subsection*{Формула Ландауэра}
+\subsection{Формула Ландауэра}
 
 Рассмотрим два куска металла между которыми существует 1D идеальный провод. Химпотенциалы соответственно равны
 \begin{equation*}
@@ -98,7 +62,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 
-\subsection*{Квантовый эффект Холла}
+\subsection{Квантовый эффект Холла}
 
 
 \textbf{Эффект Холла}. 

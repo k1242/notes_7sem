@@ -1,0 +1,65 @@
+% Электронный транспорт в металлах
+% Классическая модель проводимости Друде.
+% Полуклассическое описание электронного транспорта - уравнение Больцмана.
+% Проводимость при упругом рассеянии электронов на примесях, транспортное время рассеяния.
+
+
+\subsection{Модель проводимости Друде}
+
+Рассмотрим движение электронов под действием электрического поля
+\begin{equation*}
+	m (\ddot{x} + \gamma \dot{x}) = e E,
+\end{equation*}
+в установившемся режиме $\ddot{x} = 0$, $\gamma = 1/\tau$, где $\tau$ -- время столкновений. Так находим
+\begin{equation*}
+	v = \frac{e \tau}{m}E,
+	\hspace{5 mm} 
+	j = e n v = \frac{n e^2}{m} \tau E,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	\sigma_{\scalebox{0.55}{\text{D}}} = \frac{n e^2}{m} \tau.
+\end{equation*}
+
+Столкновения обусловлены нарушением структуры решетки, электрон-электронным взаимодействием, рассеянием на фононах. Время $\tau$ при разных механизмах можем найти по формуле
+\begin{equation*}
+	\frac{1}{\tau} = \frac{1}{\sub{\tau}{прим}} + \frac{1}{\sub{\tau}{фонон}} + \ldots
+\end{equation*}
+
+
+
+\subsection{Формула Больцмана}
+
+Запишем уравнение на динамику чисел заполнения $f(k, r)$:
+\begin{equation*}
+	\partial_t f(k, r) + \vc{v} \cdot \vc{\nabla}_r f + \dot{\vc{k}} \vc{\nabla}_k f = I_{st}[f],
+\end{equation*}
+где $I_{st}[f]$ -- интеграл столкновений, $\dot{\vc{k}} = eE / \hbar$ -- внешняя сила. Считая ситуацию изотропной и стационарной, получаем \textit{уравнение Больцмана}
+\begin{equation*}
+	e \vc{E} \cdot \frac{\partial f}{\partial \vc{k}} = I_{st}[f].
+\end{equation*}
+Столкновительный интеграл можем расписать в виде
+\begin{equation*}
+	I_{st}[f] = - \sum_{k'} \left(
+		w_{k'k} f_k (1-f_{k'}) - w_{kk'} f_{k'} (1-f_k)
+	\right) = \sum w_{k k'} (f_k - f_{k'}),
+\end{equation*}
+где амплитуда рассеяния по золотому правилу Ферми с учетом упругости процесса $w_{k'k} = \frac{2 \pi}{\hbar} |V_{k' k}|^2 \delta(\varepsilon_k - \varepsilon_{k'})$. Можем угадать решение в виде
+\begin{equation*}
+	f_k = f(\varepsilon_k) + \delta f_k,
+	\hspace{5 mm} 
+	\delta f_k = - c \cdot \vc{E} \cdot \vc{v}_k \cdot f_0'(\varepsilon).
+\end{equation*}
+Подставляя, найдём связь тока и поля в виде
+\begin{equation*}
+	\vc{J} = \frac{n e^2}{m} \tau \vc{E},
+	\hspace{5 mm} 
+	\frac{1}{\tau} = -\lambda = \int \frac{\d \Omega}{4 \pi} w(\theta) (1-\cos \theta).
+\end{equation*}
+Таким образом вклад вносят только рассеивающие на большой угол примеси. 
+
+
+
+\textbf{Критерий применимости}. Здесь приближение было в разделение координат и импульсов, то есть должно быть $\Delta k \sim \frac{1}{l} \ll \kF$, где $l \sim \vF \cdot \tau$, так получаем критерий \textit{Иоффе-Регеля}
+\begin{equation*}
+	\kF \cdot l \gg 1
+\end{equation*}
+критерий применимости Больцмановского приближения. 

@@ -1,9 +1,103 @@
 % Концепция Ландау Ферми-жидкости.
+
 % Кулоновское взаимодействие в металлах, 
 % экранирование внешнего потенциала (приближение Томаса-Ферми)
+
 % Диэлектрическая функция в металлах.
 %  Плазмоны.
 
 % уменьшить количество слоёв
 % увеличить вклад по времени
 % 
+
+\subsection{Концепция Ферми-жидкости Ландау}
+
+
+Считаем, что рассеиваться могут только электроны вблизи поверхности Ферми, говорим про квазиэлектрон и квазидырку вблизи поверхности Ферми. Также считаем, что время рассеяния велико $T \sim \hbar/\tau \ll \eF$. 
+
+Для концентрации электронов можем найти
+\begin{equation*}
+	n = 2 \frac{1}{(2\pi)^3} \int_{k < \kF} \d^3 k = \frac{\kF^3}{3 \pi^2}.
+\end{equation*}
+Вводя характерный размер -- боровский радиус $\aB$, можем заметить что при $\kF \aB \ll 1$ получится вигнеровский кристалл, а при $\kF \aB \gg 1$ -- Ферми-газ. 
+
+
+
+\subsection{Экранирование Томаса-Ферми}
+
+Рассмотрим действие некоторого внешнего потенциала в системе Ферми-газа. Будем считать, что $\kF (r) = \kF + \delta \kF(r)$. Рассматриваем линейный отклик системы на воздействие внешнего потенциала $\delta U_e (r)$. Это приведёт к некоторому эффективному потенциалу $\delta U(r) = \delta U_e (r) + e \varphi$, который и будут чувствовать электроны
+\begin{equation*}
+	\mu = \frac{\kF^2}{2m} + \delta U(r) = \const,
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	\delta \kF(r) = - \delta U(r) \frac{m}{\kF}.
+\end{equation*}
+Вспоминая, что $n = \frac{\kF^3}{3 \pi^2}$, находим
+\begin{equation*}
+	\delta n = \frac{\kF^2}{\pi^2} \delta \kF = - m \frac{\kF}{\pi^2} \delta U(r).
+\end{equation*}
+Для плотности заряда $\delta \rho = e \delta n$, тогда
+\begin{equation*}
+	\left\{\begin{aligned}
+	    \div \vc{E} &= 4 \pi \rho \\
+	    \vc{E} &= - \vc{\nabla} \varphi
+	\end{aligned}\right.
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	\nabla^2 \varphi(r) = - 4 \pi e \, \delta n = \frac{4 e m \kF}{\pi} \delta U(r),
+\end{equation*}
+где добавку $\delta U(r)$ распишем в виде $\delta U(r) = \delta U_e (r) + e \varphi(r)$. Таким образом находим уравнение на вклад потенциал $\varphi(r)$:
+\begin{equation*}
+	\left(
+		\nabla^2 - \frac{4 e^2 \kF^2}{\pi \vF}
+	\right)\varphi(r) = \frac{4 e \kF^2}{\pi \vF} \, \delta U_e (r).
+\end{equation*}
+
+Переходя к Фурье образу $\varphi(r) = \frac{1}{V} \sum_q e^{i q r} \varphi(q)$, находим
+\begin{equation*}
+	(-q^2-\TF^2) \varphi(q) = \frac{\TF^2}{e}  \delta U_e(q),
+\end{equation*}
+таким образом получаем искомое экранирование потенциала:
+\begin{equation*}
+	\varphi(q) = - \frac{\TF^2}{e} \frac{\delta U_e (q)}{q^2 + \TF^2},
+	\hspace{10 mm} 
+	\TF^2 = \frac{4 e^2 m}{\pi} \kF = \frac{4}{\pi} \frac{\kF}{\aB},
+\end{equation*}
+где $\TF$ -- импульс Томаса-Ферми. 
+
+Считая потенциал кулоновским $\delta U_e (r) = e^2/r$ и $\delta U_e (q) = 4 \pi e^2/q^2$, находим
+\begin{equation*}
+	\delta U (q) = \delta U_e (q) \left(1 - \frac{\TF^2}{q^2 + \TF^2}\right) = \frac{4 \pi e^2}{q^2 + \TF^2},
+	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+	U(r) = \frac{e^2}{r} e^{-r/\rTF},
+\end{equation*}
+где $\rTF = 1/\TF$. Критерием применимости приведенного выше вывода является достаточная гладкость потенциала $\kF \rTF \gg 1$ или $\kF \aB \gg 1$, что выполняется. 
+
+
+
+
+
+\subsection{\redx Диэлектрическая функция в металлах}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+\subsection{\redx Плазмоны}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+
+
+
+% Объём поверхностного слоя $4 \pi^2 \kF^2 \cdot T$. 
+
